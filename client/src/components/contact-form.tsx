@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertLeadSchema, type InsertLead } from "@shared/schema";
@@ -38,19 +37,19 @@ export function ContactForm() {
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="bg-white p-8 rounded-2xl shadow-xl border border-teal-100 text-center space-y-4 h-full flex flex-col items-center justify-center min-h-[400px]"
+        className="bg-charcoal-800 p-8 rounded-2xl border border-white/10 text-center space-y-4 min-h-[320px] flex flex-col items-center justify-center"
       >
-        <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center text-teal-600 mb-2">
+        <div className="w-16 h-16 bg-brand-blue/20 rounded-full flex items-center justify-center text-brand-blue mb-2">
           <CheckCircle2 className="w-8 h-8" />
         </div>
-        <h3 className="text-2xl font-bold text-slate-900">Message Received!</h3>
-        <p className="text-slate-500 max-w-xs mx-auto">
-          Thank you for reaching out. Our team will review your inquiry and get back to you within 24 hours.
+        <h3 className="text-2xl font-display font-bold text-white">Message Received</h3>
+        <p className="text-slate-400 max-w-xs mx-auto text-sm">
+          Thank you for reaching out. Our team will review your inquiry and respond within 24 hours.
         </p>
         <Button
           variant="outline"
           onClick={() => window.location.reload()}
-          className="mt-4 border-teal-200 text-teal-700 hover:bg-teal-50 hover:text-teal-800"
+          className="mt-4 border-white/20 text-white hover:bg-white/10"
         >
           Send another message
         </Button>
@@ -59,11 +58,11 @@ export function ContactForm() {
   }
 
   return (
-    <div className="bg-white p-8 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100">
+    <div className="bg-charcoal-800 p-8 rounded-2xl border border-white/10 max-w-2xl">
       <div className="mb-8">
-        <h3 className="text-2xl font-bold text-slate-900 mb-2">Start the Conversation</h3>
-        <p className="text-slate-500 text-sm">
-          Fill out the form below to schedule your free strategy consultation.
+        <h3 className="text-2xl font-display font-bold text-white mb-2">Book A Strategy Call</h3>
+        <p className="text-slate-400 text-sm">
+          Tell us about your revenue systems challenges. We&apos;ll respond with next steps.
         </p>
       </div>
 
@@ -75,9 +74,13 @@ export function ContactForm() {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-slate-700 font-medium">Full Name</FormLabel>
+                  <FormLabel className="text-slate-300 font-medium">Full Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="John Doe" className="h-11 bg-slate-50 border-slate-200 focus:border-teal-500 focus:ring-teal-500/20" {...field} />
+                    <Input
+                      placeholder="John Doe"
+                      className="h-11 bg-charcoal border-white/10 text-white placeholder:text-slate-500 focus:border-brand-blue focus:ring-brand-blue/20"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -88,9 +91,13 @@ export function ContactForm() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-slate-700 font-medium">Work Email</FormLabel>
+                  <FormLabel className="text-slate-300 font-medium">Work Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="john@company.com" className="h-11 bg-slate-50 border-slate-200 focus:border-teal-500 focus:ring-teal-500/20" {...field} />
+                    <Input
+                      placeholder="john@company.com"
+                      className="h-11 bg-charcoal border-white/10 text-white placeholder:text-slate-500 focus:border-brand-blue focus:ring-brand-blue/20"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -103,9 +110,13 @@ export function ContactForm() {
             name="company"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-slate-700 font-medium">Company Name</FormLabel>
+                <FormLabel className="text-slate-300 font-medium">Company Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Acme Inc." className="h-11 bg-slate-50 border-slate-200 focus:border-teal-500 focus:ring-teal-500/20" {...field} />
+                  <Input
+                    placeholder="Acme Inc."
+                    className="h-11 bg-charcoal border-white/10 text-white placeholder:text-slate-500 focus:border-brand-blue focus:ring-brand-blue/20"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -117,12 +128,12 @@ export function ContactForm() {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-slate-700 font-medium">How can we help?</FormLabel>
+                <FormLabel className="text-slate-300 font-medium">How can we help?</FormLabel>
                 <FormControl>
-                  <Textarea 
-                    placeholder="Tell us about your sales goals and challenges..." 
-                    className="min-h-[120px] bg-slate-50 border-slate-200 focus:border-teal-500 focus:ring-teal-500/20 resize-none" 
-                    {...field} 
+                  <Textarea
+                    placeholder="Describe your GTM stack, CRM setup, and growth goals..."
+                    className="min-h-[120px] bg-charcoal border-white/10 text-white placeholder:text-slate-500 focus:border-brand-blue focus:ring-brand-blue/20 resize-none"
+                    {...field}
                   />
                 </FormControl>
                 <FormMessage />
@@ -130,10 +141,10 @@ export function ContactForm() {
             )}
           />
 
-          <Button 
-            type="submit" 
+          <Button
+            type="submit"
             disabled={isPending}
-            className="w-full h-12 bg-teal-500 hover:bg-teal-600 text-white font-semibold text-lg shadow-lg shadow-teal-500/25 transition-all"
+            className="w-full h-12 bg-brand-blue hover:bg-brand-blue-dark text-white font-semibold text-lg shadow-lg shadow-brand-blue/25 transition-all"
           >
             {isPending ? (
               <>
