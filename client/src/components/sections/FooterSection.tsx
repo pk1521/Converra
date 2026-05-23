@@ -35,6 +35,7 @@ export function FooterSection() {
             <h4 className="font-semibold text-white mb-4">Company</h4>
             <ul className="space-y-3 text-sm">
               <li><a href="/about" className="hover:text-brand-blue transition-colors">About</a></li>
+              <li><a href="/real-estate" className="hover:text-brand-blue transition-colors">Real Estate & Renovation</a></li>
               <li><a href="#industries" className="hover:text-brand-blue transition-colors">Industries</a></li>
               <li><a href="#footer-contact" className="hover:text-brand-blue transition-colors">Contact</a></li>
             </ul>
