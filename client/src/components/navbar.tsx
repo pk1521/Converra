@@ -14,7 +14,7 @@ const growthNavLinks = [
   { label: "Sprint", href: "/#revenue-engine-sprint" },
   { label: "Process", href: "/#process" },
   { label: "Outcomes", href: "/#outcomes" },
-  { label: "Contact", href: "/#calendly-embed" },
+  { label: "Contact", href: "/#book-a-call" },
 ];
 
 const realEstateNavLinks = [
@@ -22,7 +22,7 @@ const realEstateNavLinks = [
   { label: "Services", href: "/real-estate#re-services" },
   { label: "Why Us", href: "/real-estate#re-why" },
   { label: "Process", href: "/real-estate#re-process" },
-  { label: "Contact", href: "/real-estate#calendly-embed" },
+  { label: "Contact", href: "/real-estate#book-a-call" },
 ];
 
 export function Navbar() {

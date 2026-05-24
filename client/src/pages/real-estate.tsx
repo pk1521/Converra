@@ -6,6 +6,7 @@ import { RealEstateWhy } from "@/components/sections/real-estate/RealEstateWhy";
 import { RealEstateProcess } from "@/components/sections/real-estate/RealEstateProcess";
 import { RealEstateTestimonials } from "@/components/sections/real-estate/RealEstateTestimonials";
 import { RealEstateCta } from "@/components/sections/real-estate/RealEstateCta";
+import { BookCallSection } from "@/components/sections/BookCallSection";
 import { RealEstateFooter } from "@/components/sections/real-estate/RealEstateFooter";
 
 export default function RealEstate() {
@@ -20,6 +21,7 @@ export default function RealEstate() {
         <RealEstateProcess />
         <RealEstateTestimonials />
         <RealEstateCta />
+        <BookCallSection variant="real-estate" />
       </main>
       <RealEstateFooter />
     </div>

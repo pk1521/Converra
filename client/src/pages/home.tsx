@@ -9,6 +9,7 @@ import { FounderDependencySection } from "@/components/sections/FounderDependenc
 import { IndustriesSection } from "@/components/sections/IndustriesSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { FinalCtaSection } from "@/components/sections/FinalCtaSection";
+import { BookCallSection } from "@/components/sections/BookCallSection";
 import { FooterSection } from "@/components/sections/FooterSection";
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
         <IndustriesSection />
         <TestimonialsSection />
         <FinalCtaSection />
+        <BookCallSection variant="growth" />
       </main>
       <FooterSection />
     </div>

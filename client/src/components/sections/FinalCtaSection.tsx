@@ -17,7 +17,7 @@ export function FinalCtaSection() {
   return (
     <section id="cta" className="section-dark section-padding relative overflow-hidden">
       <GrowthAmbientLayer intense />
-      <motion.div className="absolute inset-0 z-0 bg-gradient-to-t from-brand-violet/10 via-transparent to-brand-blue/10 pointer-events-none" />
+      <motion.div className="absolute inset-0 z-0 bg-gradient-to-t from-brand-blue/10 via-transparent to-brand-teal/10 pointer-events-none" />
 
       <div className="container-padding relative z-10">
         <motion.div
@@ -36,7 +36,7 @@ export function FinalCtaSection() {
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="inline-block mb-4">
             <Button
               onClick={openBookStrategyCall}
-              className="h-14 px-10 text-lg font-semibold rounded-full bg-gradient-to-r from-brand-blue via-brand-violet to-brand-cyan text-white gp-btn-glow"
+              className="h-14 px-10 text-lg font-semibold rounded-full bg-gradient-to-r from-brand-blue via-brand-teal to-brand-cyan text-white gp-btn-glow"
             >
               {GP_SCHEDULE_CTA}
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -47,7 +47,7 @@ export function FinalCtaSection() {
             Prefer to schedule below?{" "}
             <button
               type="button"
-              onClick={() => scrollToSection("calendly-embed")}
+              onClick={() => scrollToSection("book-a-call")}
               className="text-brand-cyan hover:text-brand-blue transition-colors underline-offset-2 hover:underline"
             >
               Book a call below

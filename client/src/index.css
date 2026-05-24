@@ -300,6 +300,39 @@
     background: linear-gradient(180deg, #001a33 0%, #002147 100%);
   }
 
+  .brand-badge {
+    @apply inline-flex items-center rounded-full border border-brand-teal/35 bg-brand-teal/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-cyan;
+  }
+
+  .brand-book-section {
+    @apply relative overflow-hidden text-slate-100;
+    background: linear-gradient(180deg, #001a33 0%, #002147 50%, #001a33 100%);
+  }
+
+  .brand-book-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% 0%, rgba(0, 139, 156, 0.15) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 40% at 100% 100%, rgba(0, 102, 179, 0.12) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .brand-book-section > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .brand-book-section h2 {
+    @apply text-white bg-none bg-clip-border;
+    -webkit-text-fill-color: currentColor;
+  }
+
+  .brand-footer {
+    @apply bg-brand-navy text-slate-300 border-t border-brand-teal/20;
+  }
+
   .luxury-badge,
   .site-tag {
     @apply inline-flex items-center gap-1.5 rounded-full border border-brand-teal/40 bg-brand-teal/10 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-cyan;
@@ -318,12 +351,12 @@
     left: 1.5rem;
     right: 1.5rem;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(201, 169, 98, 0.5), transparent);
+    background: linear-gradient(90deg, transparent, rgba(0, 139, 156, 0.45), transparent);
   }
 
   .luxury-card:hover,
   .construction-card-light:hover {
-    @apply border-luxury-champagne/35 shadow-[0_20px_50px_-15px_rgba(201,169,98,0.2)] -translate-y-1;
+    @apply border-brand-teal/35 shadow-[0_20px_50px_-15px_rgba(0,139,156,0.2)] -translate-y-1;
   }
 
   .luxury-card-dark,
@@ -338,13 +371,13 @@
     left: 1.5rem;
     right: 1.5rem;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(201, 169, 98, 0.45), transparent);
+    background: linear-gradient(90deg, transparent, rgba(0, 139, 156, 0.4), transparent);
     width: auto;
   }
 
   .luxury-card-dark:hover,
   .construction-card:hover {
-    @apply border-luxury-champagne/40 shadow-[0_20px_60px_-20px_rgba(201,169,98,0.25)] -translate-y-1;
+    @apply border-brand-teal/40 shadow-[0_20px_60px_-20px_rgba(0,139,156,0.25)] -translate-y-1;
   }
 
   .btn-luxury {
@@ -380,7 +413,8 @@
     @apply rounded-full shadow-[0_0_30px_-5px_rgba(59,130,246,0.5)] hover:shadow-[0_0_40px_-5px_rgba(34,211,238,0.6)];
   }
 
-  .theme-growth h2 {
+  .theme-growth .section-light h2,
+  .theme-growth .glass-card-light h2 {
     @apply text-gradient-brand;
   }
 
@@ -396,7 +430,7 @@
 
   .theme-classy h1,
   .theme-classy h2 {
-    @apply font-serif tracking-tight;
+    @apply font-display tracking-tight;
   }
 
   .theme-classy .section-light h2,

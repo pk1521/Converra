@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/navbar";
+import { BookCallSection } from "@/components/sections/BookCallSection";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { Button } from "@/components/ui/button";
 import { ProcessTimeline } from "@/components/visuals/ProcessTimeline";
@@ -6,13 +7,13 @@ import { CheckCircle, ArrowRight, Target, Layers, BarChart3 } from "lucide-react
 import { motion } from "framer-motion";
 import { openBookStrategyCall } from "@/lib/links";
 import { GP_SCHEDULE_CTA } from "@/lib/growth-partners";
-import { scrollToSection } from "@/lib/scroll";
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-charcoal text-slate-100 overflow-x-hidden">
+    <div className="theme-growth flex min-h-full flex-1 flex-col bg-offwhite overflow-x-hidden">
       <Navbar />
 
+      <main className="flex-1 w-full">
       <section className="hero-revops relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-24 pb-20">
         <div className="container-padding relative z-10 text-center max-w-4xl mx-auto">
           <motion.p
@@ -145,6 +146,8 @@ export default function About() {
         </div>
       </section>
 
+      <BookCallSection variant="growth" />
+      </main>
       <FooterSection />
     </div>
   );

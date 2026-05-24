@@ -10,12 +10,12 @@ const RENOVATION_CALENDLY_URL =
 export const CALENDLY_EMBED_URL = CALENDLY_URL;
 export const REAL_ESTATE_CALENDLY_EMBED_URL = RENOVATION_CALENDLY_URL;
 
-/** Growth Partners — scrolls to inline Calendly in footer */
+/** Growth Partners — scrolls to dedicated book-a-call section */
 export function openBookStrategyCall() {
-  scrollToSection("calendly-embed");
+  scrollToSection("book-a-call");
 }
 
-/** Real Estate — scrolls to inline Calendly in footer */
+/** Real Estate — scrolls to dedicated book-a-call section */
 export function openBookConsultation() {
-  scrollToSection("calendly-embed");
+  scrollToSection("book-a-call");
 }

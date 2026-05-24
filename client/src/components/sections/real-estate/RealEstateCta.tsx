@@ -4,7 +4,6 @@ import { ClassyAmbientLayer } from "@/components/visuals/ClassyAmbientLayer";
 import { openBookConsultation } from "@/lib/links";
 import {
   CONSTRUCTION_SUMMARY,
-  REAL_ESTATE_FORM_SUBMIT,
   REAL_ESTATE_SALE_GUARANTEE,
   REAL_ESTATE_SCHEDULE_CTA,
 } from "@/lib/real-estate";
@@ -24,7 +23,7 @@ export function RealEstateCta() {
           className="max-w-3xl mx-auto text-center"
         >
           <div className="w-16 h-px bg-gradient-to-r from-transparent via-brand-teal to-transparent mx-auto mb-8" />
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-luxury-ivory mb-4 leading-tight">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-luxury-ivory mb-4 leading-tight">
             Sell Property or Start Your Build
           </h2>
           <p className="text-lg text-luxury-cream/75 mb-4 max-w-xl mx-auto font-light">
@@ -43,11 +42,11 @@ export function RealEstateCta() {
             </Button>
             <Button
               variant="outline"
-              onClick={() => scrollToSection("calendly-embed")}
+              onClick={() => scrollToSection("book-a-call")}
               className="h-12 px-8 text-base rounded-full border-brand-teal/50 text-brand-cyan hover:bg-brand-teal/10"
             >
               <Calendar className="mr-2 h-4 w-4" />
-              {REAL_ESTATE_FORM_SUBMIT}
+              Book a call
             </Button>
           </div>
         </motion.div>
