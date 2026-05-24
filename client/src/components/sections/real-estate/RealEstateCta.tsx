@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { openBookStrategyCall } from "@/lib/links";
+import { ClassyAmbientLayer } from "@/components/visuals/ClassyAmbientLayer";
+import { openBookConsultation } from "@/lib/links";
+import { REAL_ESTATE_FORM_SUBMIT, REAL_ESTATE_SALE_GUARANTEE, REAL_ESTATE_SCHEDULE_CTA } from "@/lib/real-estate";
 import { scrollToSection } from "@/lib/scroll";
 import { ArrowRight, Mail } from "lucide-react";
 
 export function RealEstateCta() {
   return (
-    <section id="re-cta" className="section-dark section-padding relative overflow-hidden">
-      <div className="absolute inset-0 z-0 opacity-30">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[350px] bg-brand-violet/20 rounded-full blur-[100px]" />
-      </div>
+    <section id="re-cta" className="hero-luxury section-padding relative overflow-hidden">
+      <ClassyAmbientLayer variant="dark" />
 
       <div className="container-padding relative z-10">
         <motion.div
@@ -18,28 +18,32 @@ export function RealEstateCta() {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto text-center"
         >
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
-            Transform Your Space With Confidence
+          <div className="w-16 h-px bg-gradient-to-r from-transparent via-brand-teal to-transparent mx-auto mb-8" />
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-luxury-ivory mb-4 leading-tight">
+            Ready to Sell Your Property?
           </h2>
-          <p className="text-lg text-slate-400 mb-10 max-w-xl mx-auto">
-            From renovation consultancy to complete project execution, Converra helps bring modern spaces to life through structured planning and reliable execution.
+          <p className="text-lg text-luxury-cream/75 mb-6 max-w-xl mx-auto font-light">
+            List with Converra Real Estate and get structured buyer outreach, approval support, and a team focused on closing fast.
+          </p>
+          <p className="text-sm text-brand-cyan/90 mb-10 max-w-lg mx-auto">
+            {REAL_ESTATE_SALE_GUARANTEE}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              onClick={() => openBookStrategyCall(() => scrollToSection("re-contact"))}
-              className="h-12 px-8 text-base bg-brand-blue hover:bg-brand-blue-dark text-white font-semibold shadow-xl shadow-brand-blue/30"
+              onClick={openBookConsultation}
+              className="h-12 px-8 text-base rounded-full bg-brand-teal hover:bg-brand-teal/90 text-white font-semibold"
             >
-              Schedule a Consultation
+              {REAL_ESTATE_SCHEDULE_CTA}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             <Button
               variant="outline"
-              onClick={() => scrollToSection("re-contact")}
-              className="h-12 px-8 text-base btn-secondary-outline"
+              onClick={() => scrollToSection("calendly-embed")}
+              className="h-12 px-8 text-base rounded-full border-brand-teal/50 text-brand-cyan hover:bg-brand-teal/10"
             >
               <Mail className="mr-2 h-4 w-4" />
-              Contact Our Team
+              {REAL_ESTATE_FORM_SUBMIT}
             </Button>
           </div>
         </motion.div>

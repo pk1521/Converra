@@ -38,7 +38,7 @@ export function IndustriesSection() {
           Built For Companies Ready To Systematize Growth
         </h2>
         <p className="text-lg text-slate-400">
-          We work with focused segments — not everyone. If you&apos;re building revenue infrastructure, we&apos;re aligned.
+          We work with focused segments, not everyone. If you&apos;re building revenue infrastructure, we&apos;re aligned.
         </p>
       </div>
 

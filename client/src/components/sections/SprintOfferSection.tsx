@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { openBookStrategyCall } from "@/lib/links";
+import { GP_SCHEDULE_CTA } from "@/lib/growth-partners";
 import { scrollToSection } from "@/lib/scroll";
 import { ArrowRight, Sparkles } from "lucide-react";
 
@@ -27,7 +28,7 @@ export function SprintOfferSection() {
             Revenue Engine Sprint
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A premium transformation framework that rebuilds your revenue infrastructure in weeks — not quarters.
+            A premium transformation framework that rebuilds your revenue infrastructure in weeks, not quarters.
           </p>
         </div>
 
@@ -35,7 +36,7 @@ export function SprintOfferSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="gradient-border rounded-3xl bg-charcoal p-8 md:p-12 shadow-2xl"
+          className="gradient-border rounded-3xl bg-charcoal p-8 md:p-12 shadow-2xl shadow-brand-violet/20 ring-1 ring-brand-cyan/20"
         >
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
             {sprintItems.map((item, i) => (
@@ -63,10 +64,10 @@ export function SprintOfferSection() {
               Founders should lead growth, not manually carry it. The Sprint gives you the system to scale.
             </p>
             <Button
-              onClick={() => openBookStrategyCall(() => scrollToSection("footer-contact"))}
+              onClick={openBookStrategyCall}
               className="bg-brand-blue hover:bg-brand-blue-dark text-white font-semibold shrink-0"
             >
-              Book Strategy Call
+              {GP_SCHEDULE_CTA}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>

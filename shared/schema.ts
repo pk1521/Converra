@@ -3,8 +3,10 @@ import { z } from "zod";
 export const insertLeadSchema = z.object({
   name: z.string().min(1, "Name is required"),
   email: z.string().email("A valid email is required"),
-  company: z.string().min(1, "Company is required"),
+  company: z.string().min(1, "This field is required"),
+  phone: z.string().optional(),
   message: z.string().optional(),
+  source: z.enum(["growth-partners", "real-estate"]).optional(),
 });
 
 export const leadSchema = insertLeadSchema.extend({

@@ -70,7 +70,7 @@ export function PainPointsSection() {
             transition={{ duration: 0.4, delay: i * 0.05 }}
             className="enterprise-card group"
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-500/10 text-amber-600 mb-4 group-hover:bg-amber-500/15 transition-colors">
+            <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-blue/20 to-brand-violet/20 text-brand-blue mb-4 group-hover:from-brand-cyan/30 group-hover:to-brand-blue/30 group-hover:scale-110 transition-all duration-300 shadow-lg shadow-brand-blue/10">
               <item.icon className="h-5 w-5" />
             </div>
             <h3 className="font-display font-semibold text-charcoal mb-2">{item.title}</h3>

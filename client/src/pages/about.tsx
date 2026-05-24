@@ -1,10 +1,11 @@
 import { Navbar } from "@/components/navbar";
+import { FooterSection } from "@/components/sections/FooterSection";
 import { Button } from "@/components/ui/button";
 import { ProcessTimeline } from "@/components/visuals/ProcessTimeline";
 import { CheckCircle, ArrowRight, Target, Layers, BarChart3 } from "lucide-react";
 import { motion } from "framer-motion";
-import { Link } from "wouter";
 import { openBookStrategyCall } from "@/lib/links";
+import { GP_SCHEDULE_CTA } from "@/lib/growth-partners";
 import { scrollToSection } from "@/lib/scroll";
 
 export default function About() {
@@ -27,7 +28,7 @@ export default function About() {
             transition={{ delay: 0.2 }}
             className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
           >
-            Converra Growth Partners
+            We build revenue systems, not slide decks.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -35,7 +36,7 @@ export default function About() {
             transition={{ delay: 0.4 }}
             className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed"
           >
-            We build revenue systems for founder-led and growth-stage companies — GTM infrastructure, not generic consulting.
+            We build revenue systems for founder-led and growth-stage companies: GTM infrastructure, not generic consulting.
           </motion.p>
         </div>
       </section>
@@ -48,10 +49,10 @@ export default function About() {
               <strong className="text-charcoal">Converra Growth Partners</strong> is a revenue systems and GTM infrastructure consultancy. We help startups and growth-stage companies transform ad-hoc sales into structured, scalable revenue engines.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Our focus is operational: CRM architecture, outbound workflows, automation mapping, and sales process design — everything needed to make revenue predictable.
+              Our focus is operational: CRM architecture, outbound workflows, automation mapping, and sales process design, everything needed to make revenue predictable.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              We don&apos;t function as a traditional agency or outsourced sales team. We architect the systems your business runs on — so founders lead growth instead of manually carrying it.
+              We don&apos;t function as a traditional agency or outsourced sales team. We architect the systems your business runs on, so founders lead growth instead of manually carrying it.
             </p>
           </motion.div>
         </div>
@@ -62,7 +63,7 @@ export default function About() {
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-8">What We Do</h2>
             <p className="text-slate-300 text-lg leading-relaxed mb-8">
-              Most companies don&apos;t have a lead problem — they have a revenue systems problem. We diagnose gaps, architect solutions, and implement infrastructure that compounds.
+              Most companies don&apos;t have a lead problem. They have a revenue systems problem. We diagnose gaps, architect solutions, and implement infrastructure that compounds.
             </p>
             <div className="glass-card p-6 md:p-8 mb-8">
               <h3 className="font-semibold text-white mb-4">Our capabilities include:</h3>
@@ -92,7 +93,7 @@ export default function About() {
             Our Framework
           </h2>
           <p className="text-muted-foreground text-center mb-14 max-w-xl mx-auto">
-            Six phases from audit to scale — the same methodology behind our Revenue Engine Sprint.
+            Six phases from audit to scale, the same methodology behind our Revenue Engine Sprint.
           </p>
           <ProcessTimeline />
         </div>
@@ -106,7 +107,7 @@ export default function About() {
               Revenue is engineered. Predictable growth needs structured execution.
             </blockquote>
             <p className="text-slate-300 text-lg leading-relaxed">
-              Scalable companies are built on systems — not luck, not heroics, and not founder-dependent manual effort. When CRM, outbound, automation, and pipeline work as one system, growth becomes measurable and repeatable.
+              Scalable companies are built on systems, not luck, not heroics, and not founder-dependent manual effort. When CRM, outbound, automation, and pipeline work as one system, growth becomes measurable and repeatable.
             </p>
           </motion.div>
 
@@ -135,31 +136,16 @@ export default function About() {
             Growth without systems creates chaos. Let&apos;s architect yours.
           </p>
           <Button
-            onClick={() => openBookStrategyCall(() => scrollToSection("footer-contact"))}
+            onClick={openBookStrategyCall}
             className="h-14 px-10 text-lg font-semibold bg-brand-blue hover:bg-brand-blue-dark text-white"
           >
-            Book A Strategy Call
+            {GP_SCHEDULE_CTA}
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
       </section>
 
-      <footer id="footer-contact" className="bg-charcoal border-t border-white/10 py-12">
-        <div className="container-padding">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-3">
-              <img src="/logo.jpeg" alt="Converra Growth Partners" className="h-8 w-auto rounded-lg" />
-              <span className="font-display font-bold text-white">Converra Growth Partners</span>
-            </div>
-            <Link href="/" className="text-slate-400 hover:text-brand-blue transition-colors text-sm">
-              Back to home
-            </Link>
-          </div>
-          <div className="pt-6 mt-6 border-t border-white/10 text-center text-sm text-slate-500">
-            &copy; {new Date().getFullYear()} Converra Growth Partners. All rights reserved.
-          </div>
-        </div>
-      </footer>
+      <FooterSection />
     </div>
   );
 }

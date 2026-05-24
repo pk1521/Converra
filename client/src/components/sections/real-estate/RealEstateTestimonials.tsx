@@ -1,47 +1,55 @@
 import { motion } from "framer-motion";
 import { Section } from "@/components/ui/section";
-import { Quote } from "lucide-react";
+import { ClassyAmbientLayer } from "@/components/visuals/ClassyAmbientLayer";
+import { Quote, Home } from "lucide-react";
 
 const testimonials = [
   {
     quote:
-      "Professional coordination, modern execution, and timely delivery. The transformation exceeded expectations.",
+      "Our acre plot had been listed for over a year. Converra repositioned it with the right approvals narrative and we had serious buyers within weeks.",
+    name: "Land Owner",
+    role: "Acre Plot Sale",
+    ref: "PROP-042",
+  },
+  {
+    quote:
+      "They did not just post the listing. They coordinated visits, filtered buyers, and kept us updated until registration was done.",
+    name: "Residential Seller",
+    role: "Plot & Home Sale",
+    ref: "PROP-018",
+  },
+  {
+    quote:
+      "Commercial space closed faster than we expected. Clear documentation and direct buyer introductions made the difference.",
     name: "Commercial Property Owner",
-    role: "Retail Space Renovation",
+    role: "Retail Unit Sale",
+    ref: "PROP-031",
   },
   {
     quote:
-      "Structured planning from day one. The engineering-led approach gave us confidence throughout the project.",
-    name: "Residential Client",
-    role: "Home Modernization",
-  },
-  {
-    quote:
-      "Clear communication, disciplined timelines, and quality supervision. Exactly what we needed for our office upgrade.",
-    name: "Business Operations Lead",
-    role: "Corporate Office Project",
-  },
-  {
-    quote:
-      "From site evaluation to final handover, the team maintained professional standards at every stage.",
+      "Approval paperwork was the blocker for us. Once that was sorted, Converra drove the sale to close inside our target window.",
     name: "Property Investor",
-    role: "Real Estate Advisory",
+    role: "Investment Land",
+    ref: "PROP-027",
   },
 ];
 
 export function RealEstateTestimonials() {
   return (
-    <Section id="re-testimonials" variant="dark" className="!bg-charcoal-800">
-      <div className="max-w-3xl mx-auto text-center mb-14">
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
-          Client Perspectives
+    <Section id="re-testimonials" variant="dark" theme="classy" className="luxury-section-dark relative">
+      <ClassyAmbientLayer variant="dark" />
+
+      <div className="relative max-w-3xl mx-auto text-center mb-14">
+        <span className="luxury-badge mb-4">Client Feedback</span>
+        <h2 className="font-serif text-3xl md:text-4xl font-medium text-luxury-ivory mb-4 mt-4">
+          Sellers Who Closed Fast
         </h2>
-        <p className="text-lg text-slate-400">
-          Execution-focused feedback from renovation and advisory engagements.
+        <p className="text-lg text-luxury-cream/70 font-light">
+          Feedback from property owners who sold residential, commercial, and land listings with Converra.
         </p>
       </div>
 
-      <div className="grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <div className="relative grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
         {testimonials.map((t, i) => (
           <motion.div
             key={t.name}
@@ -49,19 +57,22 @@ export function RealEstateTestimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.08 }}
-            className="glass-card p-8"
+            className="construction-card p-8 pl-7"
           >
-            <Quote className="h-8 w-8 text-brand-blue/40 mb-4" />
-            <p className="text-slate-200 leading-relaxed mb-6">&ldquo;{t.quote}&rdquo;</p>
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 + i * 0.05 }}
-            >
-              <p className="font-semibold text-white text-sm">{t.name}</p>
-              <p className="text-xs text-slate-500 mt-1">{t.role}</p>
-            </motion.div>
+            <div className="flex items-center justify-between mb-4">
+              <Quote className="h-7 w-7 text-brand-teal/60" />
+              <span className="font-mono text-[10px] text-construction-concrete/50">{t.ref}</span>
+            </div>
+            <p className="text-slate-200 leading-relaxed mb-6 text-sm">&ldquo;{t.quote}&rdquo;</p>
+            <div className="flex items-center gap-3 pt-4 border-t border-construction-steel/20">
+              <div className="flex h-8 w-8 items-center justify-center rounded-md bg-brand-teal/10 border border-brand-teal/20">
+                <Home className="h-4 w-4 text-brand-teal" />
+              </div>
+              <div>
+                <p className="font-semibold text-white text-sm">{t.name}</p>
+                <p className="text-xs text-construction-concrete mt-0.5">{t.role}</p>
+              </div>
+            </div>
           </motion.div>
         ))}
       </div>

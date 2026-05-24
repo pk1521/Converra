@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu } from "lucide-react";
+import { Menu, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { openBookStrategyCall } from "@/lib/links";
-import { scrollToSection } from "@/lib/scroll";
+import { BrandLogo } from "@/components/brand-logo";
+import { openBookConsultation, openBookStrategyCall } from "@/lib/links";
+import { GP_SCHEDULE_CTA } from "@/lib/growth-partners";
+import { REAL_ESTATE_CTA_LABEL, REAL_ESTATE_SCHEDULE_CTA } from "@/lib/real-estate";
 
 const growthNavLinks = [
   { label: "Pain Points", href: "/#pain-points" },
@@ -12,15 +14,15 @@ const growthNavLinks = [
   { label: "Sprint", href: "/#revenue-engine-sprint" },
   { label: "Process", href: "/#process" },
   { label: "Outcomes", href: "/#outcomes" },
-  { label: "Contact", href: "/#footer-contact" },
+  { label: "Contact", href: "/#calendly-embed" },
 ];
 
 const realEstateNavLinks = [
   { label: "About", href: "/real-estate#re-about" },
   { label: "Services", href: "/real-estate#re-services" },
+  { label: "Why Us", href: "/real-estate#re-why" },
   { label: "Process", href: "/real-estate#re-process" },
-  { label: "Portfolio", href: "/real-estate#re-portfolio" },
-  { label: "Contact", href: "/real-estate#re-contact" },
+  { label: "Contact", href: "/real-estate#calendly-embed" },
 ];
 
 export function Navbar() {
@@ -34,45 +36,37 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToContact = () =>
-    scrollToSection(isRealEstate ? "re-contact" : "footer-contact");
-
   const navLinks = isRealEstate ? realEstateNavLinks : growthNavLinks;
-  const linkClass = isScrolled || isRealEstate
-    ? "text-slate-300 hover:text-white"
-    : "text-white/80 hover:text-white";
+  const linkClass = isRealEstate
+    ? isScrolled
+      ? "text-slate-200/90 hover:text-brand-cyan"
+      : "text-slate-200/80 hover:text-brand-cyan"
+    : isScrolled
+      ? "text-slate-200/90 hover:text-brand-cyan"
+      : "text-white/85 hover:text-brand-cyan";
 
-  const ctaLabel = isRealEstate ? "Book Consultation" : "Book Strategy Call";
+  const ctaLabel = isRealEstate ? REAL_ESTATE_SCHEDULE_CTA : GP_SCHEDULE_CTA;
+  const openSchedule = isRealEstate ? openBookConsultation : openBookStrategyCall;
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || isRealEstate
-          ? "bg-charcoal/90 backdrop-blur-xl shadow-lg shadow-black/20 py-3 border-b border-white/5"
+        isScrolled
+          ? "bg-brand-navy/95 backdrop-blur-xl shadow-lg shadow-brand-navy/30 py-3 border-b border-brand-teal/20"
           : "bg-transparent py-5"
       }`}
     >
       <div className="container-padding flex items-center justify-between gap-4">
-        <Link href="/" className="flex items-center gap-2 shrink-0 group" aria-label="Converra Growth Partners home">
-          <img
-            src="/logo.jpeg"
-            alt="Converra Growth Partners"
-            className="h-10 w-auto rounded-lg object-contain md:h-11 transition-transform duration-200 group-hover:scale-105"
-          />
-          <span className="hidden xl:block font-display font-semibold text-sm tracking-tight text-white max-w-[180px] leading-tight">
-            Converra Growth Partners
-          </span>
-        </Link>
+        <BrandLogo variant={isRealEstate ? "real-estate" : "growth"} />
 
         <div className="hidden lg:flex items-center gap-6">
-          {!isRealEstate && (
-            <Link href="/real-estate" className={`text-sm font-medium transition-colors ${linkClass}`}>
-              Real Estate
-            </Link>
-          )}
-          {isRealEstate && (
+          {isRealEstate ? (
             <Link href="/" className={`text-sm font-medium transition-colors ${linkClass}`}>
               Growth Partners
+            </Link>
+          ) : (
+            <Link href="/about" className={`text-sm font-medium transition-colors ${linkClass}`}>
+              About
             </Link>
           )}
           {navLinks.map(({ label, href }) => (
@@ -80,17 +74,32 @@ export function Navbar() {
               {label}
             </a>
           ))}
-          {!isRealEstate && (
-            <Link href="/about" className={`text-sm font-medium transition-colors ${linkClass}`}>
-              About
-            </Link>
-          )}
         </div>
 
         <div className="hidden md:flex items-center gap-3 shrink-0">
+          {!isRealEstate ? (
+            <Button
+              asChild
+              variant="outline"
+              className="border-brand-teal/50 text-brand-cyan hover:bg-brand-teal/10 font-semibold text-sm bg-transparent rounded-full"
+            >
+              <Link href="/real-estate">
+                <Building2 className="h-4 w-4 mr-2" />
+                {REAL_ESTATE_CTA_LABEL}
+              </Link>
+            </Button>
+          ) : (
+            <Button
+              asChild
+              variant="outline"
+              className="btn-secondary-outline border-brand-teal/40 text-sm rounded-full"
+            >
+              <Link href="/">Growth Partners</Link>
+            </Button>
+          )}
           <Button
-            onClick={() => openBookStrategyCall(scrollToContact)}
-            className="bg-brand-blue hover:bg-brand-blue-dark text-white font-semibold shadow-lg shadow-brand-blue/25 transition-all duration-300 text-sm"
+            onClick={openSchedule}
+            className="rounded-full bg-gradient-to-r from-brand-blue to-brand-teal hover:from-brand-teal hover:to-brand-cyan text-white font-semibold shadow-lg shadow-brand-teal/25 transition-all duration-300 text-sm gp-btn-glow"
           >
             {ctaLabel}
           </Button>
@@ -103,11 +112,12 @@ export function Navbar() {
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent className="bg-charcoal border-charcoal-700">
+            <SheetContent className="bg-brand-navy border-brand-teal/20">
               <div className="flex flex-col gap-6 mt-10">
+                <BrandLogo variant={isRealEstate ? "real-estate" : "growth"} imageClassName="h-11" />
                 {!isRealEstate ? (
                   <Link href="/real-estate" className="text-lg font-medium text-slate-100">
-                    Real Estate
+                    {REAL_ESTATE_CTA_LABEL}
                   </Link>
                 ) : (
                   <Link href="/" className="text-lg font-medium text-slate-100">
@@ -125,8 +135,8 @@ export function Navbar() {
                   </Link>
                 )}
                 <Button
-                  onClick={() => openBookStrategyCall(scrollToContact)}
-                  className="w-full bg-brand-blue hover:bg-brand-blue-dark text-white font-semibold"
+                  onClick={openSchedule}
+                  className="w-full rounded-full bg-gradient-to-r from-brand-blue to-brand-teal text-white font-semibold"
                 >
                   {ctaLabel}
                 </Button>

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { RevenueSystemVisual } from "@/components/visuals/RevenueSystemVisual";
+import { GrowthAmbientLayer } from "@/components/visuals/GrowthAmbientLayer";
 import { openBookStrategyCall } from "@/lib/links";
 import { scrollToSection } from "@/lib/scroll";
 import { ArrowRight } from "lucide-react";
@@ -8,20 +9,7 @@ import { ArrowRight } from "lucide-react";
 export function HeroSection() {
   return (
     <section id="hero" className="hero-revops relative min-h-screen flex items-center overflow-hidden text-white">
-      <div className="absolute inset-0 z-0">
-        <div
-          className="hero-glow-orb w-[min(100vw,700px)] h-[450px] -top-32 -right-20 opacity-35"
-          style={{
-            background: "radial-gradient(ellipse at center, rgba(59, 130, 246, 0.3) 0%, transparent 70%)",
-          }}
-        />
-        <div
-          className="hero-glow-orb w-[500px] h-[350px] top-1/2 -left-24 -translate-y-1/2 opacity-25"
-          style={{
-            background: "radial-gradient(ellipse at center, rgba(99, 102, 241, 0.25) 0%, transparent 70%)",
-          }}
-        />
-      </div>
+      <GrowthAmbientLayer intense />
 
       <div className="container-padding relative z-10 w-full pt-24 pb-16 lg:pt-28 lg:pb-24">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -31,12 +19,17 @@ export function HeroSection() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left"
           >
-            <p className="text-sm font-medium text-brand-cyan tracking-wide mb-4">
+            <motion.p
+              animate={{ opacity: [0.7, 1, 0.7] }}
+              transition={{ duration: 3, repeat: Infinity }}
+              className="inline-block text-sm font-semibold text-brand-cyan tracking-widest uppercase mb-4 px-3 py-1 rounded-full border border-brand-teal/40 bg-brand-teal/10"
+            >
               Revenue is engineered.
-            </p>
+            </motion.p>
 
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.08] text-white mb-6">
-              Helping Business With Additional Revenue & Growth
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.08] text-white mb-6 gp-hero-glow">
+              Helping Business With Additional Revenue &{" "}
+              <span className="text-gradient-brand">Growth</span>
             </h1>
 
             <p className="text-lg md:text-xl text-slate-300/95 leading-relaxed mb-10">
@@ -45,15 +38,15 @@ export function HeroSection() {
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
               <Button
-                onClick={() => openBookStrategyCall(() => scrollToSection("footer-contact"))}
-                className="h-12 px-8 text-base bg-brand-blue hover:bg-brand-blue-dark text-white font-semibold shadow-xl shadow-brand-blue/30 transition-all duration-300"
+                onClick={openBookStrategyCall}
+                className="h-12 px-8 text-base rounded-full bg-gradient-to-r from-brand-blue to-brand-teal hover:from-brand-teal hover:to-brand-cyan text-white font-semibold gp-btn-glow transition-all duration-300"
               >
                 Book Strategy Call
               </Button>
               <Button
                 variant="outline"
                 onClick={() => scrollToSection("what-we-solve")}
-                className="h-12 px-8 text-base btn-secondary-outline"
+                className="h-12 px-8 text-base rounded-full btn-secondary-outline border-brand-cyan/30 hover:border-brand-cyan/60"
               >
                 Explore Revenue Systems
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -71,9 +64,11 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="relative z-10"
           >
+            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-brand-blue/20 via-brand-teal/20 to-brand-cyan/20 blur-2xl animate-pulse" />
             <motion.div
-              animate={{ y: [0, -6, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              animate={{ y: [0, -10, 0], rotate: [0, 1, 0, -1, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="relative"
             >
               <RevenueSystemVisual />
             </motion.div>

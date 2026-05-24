@@ -13,7 +13,7 @@ import { FooterSection } from "@/components/sections/FooterSection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-offwhite overflow-x-hidden">
+    <div className="theme-growth min-h-screen bg-offwhite overflow-x-hidden">
       <Navbar />
       <HeroSection />
       <PainPointsSection />

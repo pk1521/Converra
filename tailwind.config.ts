@@ -41,11 +41,11 @@ export default {
         },
         ring: "hsl(var(--ring) / <alpha-value>)",
         charcoal: {
-          DEFAULT: "#0B0D10",
-          900: "#0B0D10",
-          800: "#141820",
-          700: "#1C2330",
-          600: "#252D3D",
+          DEFAULT: "#002147",
+          900: "#001A33",
+          800: "#002147",
+          700: "#003366",
+          600: "#004A85",
         },
         offwhite: {
           DEFAULT: "#F7F8FA",
@@ -54,10 +54,32 @@ export default {
           300: "#EEF0F4",
         },
         brand: {
-          blue: "#3B82F6",
-          "blue-dark": "#2563EB",
-          violet: "#6366F1",
-          cyan: "#22D3EE",
+          navy: "#002147",
+          blue: "#0066B3",
+          "blue-dark": "#004A85",
+          teal: "#008B9C",
+          cyan: "#2EC4C9",
+          grey: "#999999",
+          // legacy aliases used across components
+          violet: "#0066B3",
+        },
+        construction: {
+          steel: "#64748B",
+          "steel-dark": "#475569",
+          blueprint: "#1E3A5F",
+          "blueprint-light": "#2D4A6F",
+          concrete: "#94A3B8",
+          safety: "#F59E0B",
+          "safety-muted": "#D97706",
+        },
+        luxury: {
+          ivory: "#F7FAFB",
+          cream: "#EEF4F6",
+          stone: "#002147",
+          charcoal: "#001A33",
+          bronze: "#0066B3",
+          champagne: "#008B9C",
+          "champagne-light": "#2EC4C9",
         },
         navy: {
           DEFAULT: "#0E1E2F",
@@ -77,6 +99,7 @@ export default {
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
         display: ["Space Grotesk", "Inter", "system-ui", "sans-serif"],
+        serif: ["Playfair Display", "Georgia", "serif"],
       },
       keyframes: {
         "accordion-down": {
@@ -95,16 +118,30 @@ export default {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-4px)" },
         },
+        "gp-shimmer": {
+          "0%": { transform: "translateX(-100%) skewX(-12deg)" },
+          "100%": { transform: "translateX(200%) skewX(-12deg)" },
+        },
+        "luxury-fade-up": {
+          "0%": { opacity: "0", transform: "translateY(12px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        "bubble-drift": {
+          "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+          "50%": { transform: "translate(12px, -20px) scale(1.05)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "hero-gradient-wave": "hero-gradient-wave 14s ease-in-out infinite",
         "card-float": "card-float 4s ease-in-out infinite",
+        "gp-shimmer": "gp-shimmer 3s ease-in-out infinite",
+        "bubble-drift": "bubble-drift 8s ease-in-out infinite",
       },
       backgroundImage: {
-        "gradient-brand": "linear-gradient(135deg, #3B82F6 0%, #6366F1 50%, #22D3EE 100%)",
-        "gradient-brand-subtle": "linear-gradient(135deg, rgba(59,130,246,0.15) 0%, rgba(99,102,241,0.15) 50%, rgba(34,211,238,0.1) 100%)",
+        "gradient-brand": "linear-gradient(135deg, #0066B3 0%, #008B9C 50%, #2EC4C9 100%)",
+        "gradient-brand-subtle": "linear-gradient(135deg, rgba(0,102,179,0.12) 0%, rgba(0,139,156,0.12) 50%, rgba(46,196,201,0.08) 100%)",
       },
     },
   },

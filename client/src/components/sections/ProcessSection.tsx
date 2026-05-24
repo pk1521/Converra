@@ -12,7 +12,7 @@ export function ProcessSection() {
           System-Driven Revenue Transformation
         </h2>
         <p className="text-lg text-muted-foreground">
-          Six phases. One outcome — a revenue engine your business can run without chaos.
+          Six phases. One outcome: a revenue engine your business can run without chaos.
         </p>
       </div>
       <ProcessTimeline />

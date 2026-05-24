@@ -20,7 +20,7 @@ const services = [
   {
     icon: Database,
     title: "CRM Optimization",
-    outcome: "CRM structures that teams actually use — clean data, clear stages, full visibility.",
+    outcome: "CRM structures that teams actually use: clean data, clear stages, full visibility.",
   },
   {
     icon: Send,
@@ -65,7 +65,7 @@ export function WhatWeSolveSection() {
           Your Revenue Systems Partner
         </h2>
         <p className="text-lg text-slate-400">
-          We don&apos;t sell activities. We build outcomes — structured systems that make growth predictable.
+          We don&apos;t sell activities. We build outcomes: structured systems that make growth predictable.
         </p>
       </div>
 

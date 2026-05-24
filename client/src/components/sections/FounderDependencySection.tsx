@@ -3,10 +3,10 @@ import { Section } from "@/components/ui/section";
 import { FounderSystemDiagram } from "@/components/visuals/FounderSystemDiagram";
 
 const points = [
-  "Every deal requires founder involvement — creating a hard ceiling on growth.",
+  "Every deal requires founder involvement, creating a hard ceiling on growth.",
   "Operational dependency means the business can't run sales without you in the loop.",
   "Inconsistent execution across reps, channels, and follow-up sequences.",
-  "No documented systems — knowledge lives in one person's head.",
+  "No documented systems. Knowledge lives in one person's head.",
   "Burnout from manually carrying growth instead of leading it.",
 ];
 
@@ -22,7 +22,7 @@ export function FounderDependencySection() {
             If Sales Depend Entirely On The Founder, The Business Is Not Scalable.
           </h2>
           <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-            Most growth-stage companies hit the same wall: revenue works until it doesn&apos;t — because it was never built as a system.
+            Most growth-stage companies hit the same wall: revenue works until it doesn&apos;t, because it was never built as a system.
           </p>
 
           <ul className="space-y-4 mb-8">

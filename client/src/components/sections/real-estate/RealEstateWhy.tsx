@@ -1,36 +1,41 @@
 import { motion } from "framer-motion";
 import { Section } from "@/components/ui/section";
 import {
-  Compass,
-  Layers,
+  Zap,
+  FileCheck,
   Users,
   MessageSquare,
   Clock,
-  Award,
+  Shield,
   Target,
-  Sparkles,
+  TrendingUp,
 } from "lucide-react";
+import { REAL_ESTATE_SALE_GUARANTEE } from "@/lib/real-estate";
 
 const reasons = [
-  { icon: Compass, title: "Engineering-driven approach" },
-  { icon: Layers, title: "Structured execution systems" },
-  { icon: Sparkles, title: "Modern renovation thinking" },
-  { icon: Users, title: "Skilled execution teams" },
-  { icon: Target, title: "Professional coordination" },
-  { icon: MessageSquare, title: "Transparent communication" },
-  { icon: Clock, title: "Focused on timelines & quality" },
-  { icon: Award, title: "Experience-oriented transformations" },
+  { icon: Zap, title: "Fast-sale positioning" },
+  { icon: Clock, title: "3-month target on acre plots" },
+  { icon: FileCheck, title: "Proper approvals first" },
+  { icon: Users, title: "Qualified buyer network" },
+  { icon: Target, title: "Clear pricing strategy" },
+  { icon: MessageSquare, title: "Transparent updates" },
+  { icon: Shield, title: "Documentation discipline" },
+  { icon: TrendingUp, title: "Investor-ready listings" },
 ];
 
 export function RealEstateWhy() {
   return (
-    <Section id="re-why" variant="light">
-      <div className="max-w-3xl mx-auto text-center mb-14">
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-charcoal mb-4">
-          Why Converra
+    <Section id="re-why" variant="light" theme="classy" className="luxury-section-light">
+      <div className="max-w-3xl mx-auto text-center mb-10">
+        <span className="luxury-badge mb-4">Why Choose Us</span>
+        <h2 className="font-serif text-3xl md:text-4xl font-medium text-luxury-stone mb-4 mt-4">
+          Why Converra Real Estate
         </h2>
-        <p className="text-lg text-muted-foreground">
-          Trusted execution backed by engineering discipline and modern project standards.
+        <p className="text-lg text-luxury-stone/70 font-light mb-6">
+          We do not list and wait. We actively market, qualify buyers, and push toward a signed deal.
+        </p>
+        <p className="text-base text-luxury-stone/80 max-w-2xl mx-auto leading-relaxed">
+          {REAL_ESTATE_SALE_GUARANTEE}
         </p>
       </div>
 
@@ -47,14 +52,11 @@ export function RealEstateWhy() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.05 }}
-            className="enterprise-card p-6 text-center group"
+            className="construction-card-light p-6 text-center group"
           >
-            <motion.div
-              className="flex h-11 w-11 items-center justify-center rounded-xl bg-charcoal/5 text-charcoal mx-auto mb-4 group-hover:bg-brand-blue/10 group-hover:text-brand-blue transition-colors"
-              whileHover={{ scale: 1.05 }}
-            >
+            <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-construction-blueprint/5 border border-construction-blueprint/10 text-construction-blueprint mx-auto mb-4 group-hover:bg-brand-teal/10 group-hover:border-brand-teal/30 group-hover:text-brand-teal transition-colors">
               <item.icon className="h-5 w-5" />
-            </motion.div>
+            </div>
             <p className="font-medium text-charcoal text-sm leading-snug">{item.title}</p>
           </motion.div>
         ))}

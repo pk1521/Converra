@@ -25,7 +25,7 @@ const steps: { step: string; title: string; desc: string; icon: LucideIcon }[] =
   {
     step: "03",
     title: "Architect",
-    desc: "Design the revenue system blueprint — processes, tools, and automation layers.",
+    desc: "Design the revenue system blueprint: processes, tools, and automation layers.",
     icon: Layers,
   },
   {
