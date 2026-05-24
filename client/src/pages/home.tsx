@@ -13,18 +13,20 @@ import { FooterSection } from "@/components/sections/FooterSection";
 
 export default function Home() {
   return (
-    <div className="theme-growth min-h-screen bg-offwhite overflow-x-hidden">
+    <div className="theme-growth flex min-h-full flex-1 flex-col bg-offwhite overflow-x-hidden">
       <Navbar />
-      <HeroSection />
-      <PainPointsSection />
-      <WhatWeSolveSection />
-      <SprintOfferSection />
-      <ProcessSection />
-      <OutcomesSection />
-      <FounderDependencySection />
-      <IndustriesSection />
-      <TestimonialsSection />
-      <FinalCtaSection />
+      <main className="flex-1 w-full">
+        <HeroSection />
+        <PainPointsSection />
+        <WhatWeSolveSection />
+        <SprintOfferSection />
+        <ProcessSection />
+        <OutcomesSection />
+        <FounderDependencySection />
+        <IndustriesSection />
+        <TestimonialsSection />
+        <FinalCtaSection />
+      </main>
       <FooterSection />
     </div>
   );

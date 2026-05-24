@@ -18,7 +18,10 @@ export const REAL_ESTATE_SALE_GUARANTEE =
   "We focus on moving properties fast. With proper approvals in place, even acre plots are positioned to sell within 3 months.";
 
 export const CONSULTANCY_SUMMARY =
-  "A-Z construction consultancy: planning, approvals, site coordination, execution oversight, and handover support from one team.";
+  "A-Z construction consultancy: planning, civil guidance, approvals, site coordination, execution oversight, vendor management, and handover support from one team.";
+
+export const CONSTRUCTION_SUMMARY =
+  "From renovation and new builds to commercial fit-outs, we handle construction end to end with engineering-led planning, on-site supervision, and structured delivery.";
 
 export const FOOTER_PROMO_SUMMARY =
-  "Real estate sales with a fast-close focus, plus end-to-end construction consultancy for residential, commercial, and land projects.";
+  "Real estate sales with a fast-close focus, plus A-Z construction consultancy and project execution for residential, commercial, and land projects.";

@@ -13,7 +13,7 @@ import {
 } from "@/lib/real-estate";
 export function RealEstateFooter() {
   return (
-    <footer id="re-contact" className="bg-brand-navy border-t border-brand-teal/20 py-16 text-slate-300">
+    <footer id="re-contact" className="mt-auto w-full shrink-0 bg-brand-navy border-t border-brand-teal/20 py-16 text-slate-300">
       <div className="container-padding">
         <div className="mb-14 rounded-2xl border border-brand-teal/25 bg-brand-navy/80 p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div className="max-w-xl">

@@ -24,7 +24,9 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <WouterRouter>
-          <AppRoutes />
+          <div className="flex min-h-screen flex-1 flex-col">
+            <AppRoutes />
+          </div>
         </WouterRouter>
         <Toaster />
       </TooltipProvider>

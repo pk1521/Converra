@@ -7,20 +7,20 @@ import {
   MessageSquare,
   Clock,
   Shield,
-  Target,
-  TrendingUp,
+  HardHat,
+  Hammer,
 } from "lucide-react";
-import { REAL_ESTATE_SALE_GUARANTEE } from "@/lib/real-estate";
+import { CONSTRUCTION_SUMMARY, REAL_ESTATE_SALE_GUARANTEE } from "@/lib/real-estate";
 
 const reasons = [
-  { icon: Zap, title: "Fast-sale positioning" },
+  { icon: Zap, title: "Fast-sale real estate positioning" },
   { icon: Clock, title: "3-month target on acre plots" },
-  { icon: FileCheck, title: "Proper approvals first" },
-  { icon: Users, title: "Qualified buyer network" },
-  { icon: Target, title: "Clear pricing strategy" },
-  { icon: MessageSquare, title: "Transparent updates" },
-  { icon: Shield, title: "Documentation discipline" },
-  { icon: TrendingUp, title: "Investor-ready listings" },
+  { icon: HardHat, title: "Engineering-led construction" },
+  { icon: Hammer, title: "A-Z renovation & build support" },
+  { icon: FileCheck, title: "Approvals & documentation first" },
+  { icon: Users, title: "Qualified buyers & site teams" },
+  { icon: MessageSquare, title: "Transparent project updates" },
+  { icon: Shield, title: "Quality supervision on-site" },
 ];
 
 export function RealEstateWhy() {
@@ -29,13 +29,16 @@ export function RealEstateWhy() {
       <div className="max-w-3xl mx-auto text-center mb-10">
         <span className="luxury-badge mb-4">Why Choose Us</span>
         <h2 className="font-serif text-3xl md:text-4xl font-medium text-luxury-stone mb-4 mt-4">
-          Why Converra Real Estate
+          Why Converra
         </h2>
-        <p className="text-lg text-luxury-stone/70 font-light mb-6">
-          We do not list and wait. We actively market, qualify buyers, and push toward a signed deal.
+        <p className="text-lg text-luxury-stone/70 font-light mb-4">
+          One partner for selling property and delivering construction. No handoffs, no gaps.
+        </p>
+        <p className="text-base text-luxury-stone/80 max-w-2xl mx-auto leading-relaxed mb-2">
+          {REAL_ESTATE_SALE_GUARANTEE}
         </p>
         <p className="text-base text-luxury-stone/80 max-w-2xl mx-auto leading-relaxed">
-          {REAL_ESTATE_SALE_GUARANTEE}
+          {CONSTRUCTION_SUMMARY}
         </p>
       </div>
 

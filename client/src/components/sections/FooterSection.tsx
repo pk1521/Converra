@@ -13,7 +13,7 @@ import {
 
 export function FooterSection() {
   return (
-    <footer id="footer-contact" className="bg-brand-navy border-t border-brand-teal/20 py-16 text-slate-300">
+    <footer id="footer-contact" className="mt-auto w-full shrink-0 bg-brand-navy border-t border-brand-teal/20 py-16 text-slate-300">
       <div className="container-padding">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mb-14">
           <div className="col-span-2 md:col-span-4 lg:col-span-2">

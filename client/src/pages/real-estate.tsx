@@ -10,15 +10,17 @@ import { RealEstateFooter } from "@/components/sections/real-estate/RealEstateFo
 
 export default function RealEstate() {
   return (
-    <div className="theme-classy min-h-screen bg-luxury-ivory overflow-x-hidden">
+    <div className="theme-classy flex min-h-full flex-1 flex-col bg-luxury-ivory overflow-x-hidden">
       <Navbar />
-      <RealEstateHero />
-      <RealEstateAbout />
-      <RealEstateServices />
-      <RealEstateWhy />
-      <RealEstateProcess />
-      <RealEstateTestimonials />
-      <RealEstateCta />
+      <main className="flex-1 w-full">
+        <RealEstateHero />
+        <RealEstateAbout />
+        <RealEstateServices />
+        <RealEstateWhy />
+        <RealEstateProcess />
+        <RealEstateTestimonials />
+        <RealEstateCta />
+      </main>
       <RealEstateFooter />
     </div>
   );

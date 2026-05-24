@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { RevenueSystemVisual } from "@/components/visuals/RevenueSystemVisual";
 import { GrowthAmbientLayer } from "@/components/visuals/GrowthAmbientLayer";
 import { openBookStrategyCall } from "@/lib/links";
+import { PK_GROUPS_TAGLINE } from "@/lib/brand";
 import { scrollToSection } from "@/lib/scroll";
 import { ArrowRight } from "lucide-react";
 
@@ -19,6 +20,15 @@ export function HeroSection() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left"
           >
+            <motion.p
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-xs font-medium tracking-[0.25em] uppercase text-slate-400 mb-3"
+            >
+              {PK_GROUPS_TAGLINE}
+            </motion.p>
+
             <motion.p
               animate={{ opacity: [0.7, 1, 0.7] }}
               transition={{ duration: 3, repeat: Infinity }}

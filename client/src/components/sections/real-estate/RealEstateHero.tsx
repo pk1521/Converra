@@ -4,16 +4,18 @@ import { RealEstateVisual } from "@/components/visuals/RealEstateVisual";
 import { ClassyAmbientLayer } from "@/components/visuals/ClassyAmbientLayer";
 import { openBookConsultation } from "@/lib/links";
 import {
+  CONSTRUCTION_SUMMARY,
   CONSULTANCY_SUMMARY,
   REAL_ESTATE_SALE_GUARANTEE,
   REAL_ESTATE_SCHEDULE_CTA,
 } from "@/lib/real-estate";
 import { scrollToSection } from "@/lib/scroll";
-import { ArrowRight, Home, MapPin, FileCheck } from "lucide-react";
+import { PK_GROUPS_TAGLINE } from "@/lib/brand";
+import { ArrowRight, Home, HardHat, FileCheck } from "lucide-react";
 
 const siteStats = [
   { icon: Home, label: "Properties Sold", value: "100+" },
-  { icon: MapPin, label: "Avg. Close Time", value: "3 Mo" },
+  { icon: HardHat, label: "Projects Delivered", value: "50+" },
   { icon: FileCheck, label: "Approvals Cleared", value: "100%" },
 ];
 
@@ -30,26 +32,41 @@ export function RealEstateHero() {
             transition={{ duration: 0.7 }}
             className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left"
           >
+            <motion.p
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-xs font-medium tracking-[0.25em] uppercase text-slate-400 mb-3"
+            >
+              {PK_GROUPS_TAGLINE}
+            </motion.p>
+
             <span className="inline-block text-xs font-semibold text-brand-cyan tracking-[0.2em] uppercase mb-4 px-3 py-1 rounded-full border border-brand-teal/40 bg-brand-teal/10">
               Consultancy & Real Estate
             </span>
 
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.12] text-white mb-6">
-              Properties That{" "}
-              <span className="text-brand-cyan">Sell Fast.</span>
+              Real Estate &{" "}
+              <span className="text-brand-cyan">Construction.</span>
             </h1>
 
             <p className="text-lg md:text-xl text-slate-200/90 leading-relaxed mb-4">
-              Converra helps owners, developers, and investors sell residential plots, commercial property, and land with structured marketing, buyer outreach, and end-to-end closing support.
+              Sell property fast with structured buyer outreach and closing support. Build and renovate with A-Z construction consultancy, civil guidance, and on-site execution.
             </p>
             <p className="text-base text-slate-300/90 leading-relaxed mb-6">
               {CONSULTANCY_SUMMARY}
             </p>
 
-            <motion.div className="rounded-2xl border border-brand-teal/30 bg-brand-navy/50 backdrop-blur px-5 py-4 mb-8 text-left">
-              <p className="text-sm text-brand-cyan font-semibold uppercase tracking-wide mb-1">Fast-sale focus</p>
-              <p className="text-sm text-slate-200/90 leading-relaxed">{REAL_ESTATE_SALE_GUARANTEE}</p>
-            </motion.div>
+            <div className="grid sm:grid-cols-2 gap-4 mb-8">
+              <div className="rounded-2xl border border-brand-teal/30 bg-brand-navy/50 backdrop-blur px-5 py-4 text-left">
+                <p className="text-sm text-brand-cyan font-semibold uppercase tracking-wide mb-1">Real estate</p>
+                <p className="text-sm text-slate-200/90 leading-relaxed">{REAL_ESTATE_SALE_GUARANTEE}</p>
+              </div>
+              <div className="rounded-2xl border border-brand-teal/30 bg-brand-navy/50 backdrop-blur px-5 py-4 text-left">
+                <p className="text-sm text-brand-cyan font-semibold uppercase tracking-wide mb-1">Construction</p>
+                <p className="text-sm text-slate-200/90 leading-relaxed">{CONSTRUCTION_SUMMARY}</p>
+              </div>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
               <Button
@@ -68,7 +85,7 @@ export function RealEstateHero() {
               </Button>
             </div>
 
-            <motion.div className="grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0">
+            <div className="grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0">
               {siteStats.map((stat, i) => (
                 <motion.div
                   key={stat.label}
@@ -84,7 +101,7 @@ export function RealEstateHero() {
                   </p>
                 </motion.div>
               ))}
-            </motion.div>
+            </div>
           </motion.div>
 
           <motion.div
