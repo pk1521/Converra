@@ -8,14 +8,21 @@ const RENOVATION_CALENDLY_URL =
   (import.meta.env.VITE_CALENDLY_RENOVATION_URL as string | undefined)?.trim() || CALENDLY_URL;
 
 export const CALENDLY_EMBED_URL = CALENDLY_URL;
-export const REAL_ESTATE_CALENDLY_EMBED_URL = RENOVATION_CALENDLY_URL;
+export const RENOVATION_CALENDLY_EMBED_URL = RENOVATION_CALENDLY_URL;
+export const REALTY_CALENDLY_EMBED_URL = CALENDLY_URL;
 
-/** Growth Partners — scrolls to dedicated book-a-call section */
 export function openBookStrategyCall() {
   scrollToSection("book-a-call");
 }
 
-/** Real Estate — scrolls to dedicated book-a-call section */
-export function openBookConsultation() {
+export function openBookRealtyConsultation() {
+  scrollToSection("book-a-call");
+}
+
+export function openBookRenovationVisit() {
+  scrollToSection("book-a-call");
+}
+
+export function openBookRenovationEstimate() {
   scrollToSection("book-a-call");
 }

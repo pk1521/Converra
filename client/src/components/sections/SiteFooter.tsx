@@ -2,17 +2,26 @@ import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { BrandLogo } from "@/components/brand-logo";
 import { Button } from "@/components/ui/button";
-import { LOGO_GROWTH_PARTNERS, LOGO_REAL_ESTATE, PK_GROUPS_TAGLINE } from "@/lib/brand";
 import {
-  FOOTER_PROMO_SUMMARY,
-  REAL_ESTATE_CTA_LABEL,
-  REAL_ESTATE_EXPLORE_LABEL,
-  REAL_ESTATE_SERVICE_NAME,
-} from "@/lib/real-estate";
-
-type SiteFooterProps = {
-  variant: "growth" | "real-estate";
-};
+  CONVERRA_EMAIL,
+  CONVERRA_PHONE_DISPLAY,
+  CONVERRA_WHATSAPP_URL,
+  PK_GROUPS_TAGLINE,
+} from "@/lib/brand";
+import {
+  REALTY_EXPLORE_LABEL,
+  REALTY_FOOTER_SUMMARY,
+  REALTY_NAV_LABEL,
+  REALTY_PARTNERS_TAGLINE,
+  REALTY_SERVICE_NAME,
+} from "@/lib/realty-partners";
+import {
+  RENOVATION_EXPLORE_LABEL,
+  RENOVATION_FOOTER_SUMMARY,
+  RENOVATION_NAV_LABEL,
+  RENOVATION_TAGLINE,
+  RENOVATION_NAME,
+} from "@/lib/renovation";
 
 const growthLinks = {
   services: [
@@ -22,7 +31,8 @@ const growthLinks = {
   ],
   company: [
     { label: "About", href: "/about" },
-    { label: REAL_ESTATE_CTA_LABEL, href: "/real-estate" },
+    { label: REALTY_NAV_LABEL, href: "/realty-partners" },
+    { label: RENOVATION_NAV_LABEL, href: "/renovation" },
     { label: "Industries", href: "/#industries" },
     { label: "Book a call", href: "/#book-a-call" },
   ],
@@ -33,58 +43,36 @@ const growthLinks = {
   ],
 };
 
-const realEstateLinks = {
-  services: [
-    { label: "About", href: "/real-estate#re-about" },
-    { label: "Services", href: "/real-estate#re-services" },
-    { label: "Process", href: "/real-estate#re-process" },
-   ],
-  company: [
-    { label: "Growth Partners", href: "/" },
-    { label: "About", href: "/about" },
-    { label: "Book a call", href: "/real-estate#book-a-call" },
-  ],
-  resources: [
-    { label: "Why Converra", href: "/real-estate#re-why" },
-    { label: "Testimonials", href: "/real-estate#re-testimonials" },
-  ],
-};
-
-export function SiteFooter({ variant }: SiteFooterProps) {
-  const isGrowth = variant === "growth";
-  const links = isGrowth ? growthLinks : realEstateLinks;
-
+export function SiteFooter() {
   return (
     <footer className="brand-footer mt-auto w-full shrink-0">
       <div className="container-padding py-14 md:py-16">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-4">
-            <BrandLogo
-              variant={isGrowth ? "growth" : "real-estate"}
-              className="mb-5"
-              imageClassName="h-12 md:h-14 rounded-2xl"
-            />
+            <BrandLogo className="mb-5" imageClassName="h-12 md:h-14 rounded-2xl" />
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm mb-3">
-              {isGrowth
-                ? "Revenue systems and GTM infrastructure for founder-led and growth-stage companies."
-                : FOOTER_PROMO_SUMMARY}
+              Revenue systems and GTM infrastructure for founder-led and growth-stage companies.
             </p>
-            <p className="text-xs font-medium uppercase tracking-wider text-brand-cyan/80">
+            <p className="text-xs font-medium uppercase tracking-wider text-brand-cyan/80 mb-4">
               {PK_GROUPS_TAGLINE}
             </p>
+            <div className="space-y-1.5 text-sm text-slate-400">
+              <a href={`mailto:${CONVERRA_EMAIL}`} className="hover:text-brand-cyan transition-colors block">
+                {CONVERRA_EMAIL}
+              </a>
+              <a href={CONVERRA_WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-brand-cyan transition-colors block">
+                {CONVERRA_PHONE_DISPLAY}
+              </a>
+            </div>
           </div>
 
           <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8">
             <div>
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-white mb-4">
-                {isGrowth ? "Services" : "Explore"}
-              </h4>
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-white mb-4">Services</h4>
               <ul className="space-y-2.5 text-sm text-slate-400">
-                {links.services.map(({ label, href }) => (
+                {growthLinks.services.map(({ label, href }) => (
                   <li key={label}>
-                    <a href={href} className="hover:text-brand-cyan transition-colors">
-                      {label}
-                    </a>
+                    <a href={href} className="hover:text-brand-cyan transition-colors">{label}</a>
                   </li>
                 ))}
               </ul>
@@ -92,25 +80,19 @@ export function SiteFooter({ variant }: SiteFooterProps) {
             <div>
               <h4 className="text-xs font-semibold uppercase tracking-wider text-white mb-4">Company</h4>
               <ul className="space-y-2.5 text-sm text-slate-400">
-                {links.company.map(({ label, href }) => (
+                {growthLinks.company.map(({ label, href }) => (
                   <li key={label}>
-                    <a href={href} className="hover:text-brand-cyan transition-colors">
-                      {label}
-                    </a>
+                    <a href={href} className="hover:text-brand-cyan transition-colors">{label}</a>
                   </li>
                 ))}
               </ul>
             </div>
             <div className="col-span-2 sm:col-span-1">
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-white mb-4">
-                {isGrowth ? "Resources" : "More"}
-              </h4>
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-white mb-4">Resources</h4>
               <ul className="space-y-2.5 text-sm text-slate-400">
-                {links.resources.map(({ label, href }) => (
+                {growthLinks.resources.map(({ label, href }) => (
                   <li key={label}>
-                    <a href={href} className="hover:text-brand-cyan transition-colors">
-                      {label}
-                    </a>
+                    <a href={href} className="hover:text-brand-cyan transition-colors">{label}</a>
                   </li>
                 ))}
               </ul>
@@ -118,60 +100,35 @@ export function SiteFooter({ variant }: SiteFooterProps) {
           </div>
         </div>
 
-        {isGrowth && (
-          <div className="mt-12 rounded-2xl border border-brand-teal/20 bg-brand-navy/60 p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-            <div className="flex items-start sm:items-center gap-5">
-              <img
-                src={LOGO_REAL_ESTATE}
-                alt={REAL_ESTATE_SERVICE_NAME}
-                className="h-12 w-auto object-contain bg-white rounded-xl px-2.5 py-1.5 shrink-0"
-              />
-              <div>
-                <h3 className="font-display text-lg font-bold text-white mb-1">
-                  Consultancy & Real Estate
-                </h3>
-                <p className="text-sm text-slate-400 leading-relaxed max-w-md">
-                  {FOOTER_PROMO_SUMMARY}
-                </p>
-              </div>
+        <div className="mt-12 grid md:grid-cols-2 gap-6">
+          <div className="rounded-2xl border border-realty-gold/25 bg-realty-navy/80 p-6 md:p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+            <div>
+              <h3 className="font-display text-lg font-bold text-white mb-1">{REALTY_SERVICE_NAME}</h3>
+              <p className="text-xs font-semibold uppercase tracking-wider text-realty-gold-light mb-2">{REALTY_PARTNERS_TAGLINE}</p>
+              <p className="text-sm text-slate-400 leading-relaxed max-w-md">{REALTY_FOOTER_SUMMARY}</p>
             </div>
-            <Button
-              asChild
-              className="shrink-0 rounded-full bg-brand-teal hover:bg-brand-teal/90 text-white font-semibold h-11 px-6"
-            >
-              <Link href="/real-estate">
-                {REAL_ESTATE_EXPLORE_LABEL}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+            <Button asChild className="shrink-0 rounded-full bg-realty-gold hover:bg-realty-gold-light text-realty-navy font-semibold h-11 px-6">
+              <Link href="/realty-partners">{REALTY_EXPLORE_LABEL}<ArrowRight className="ml-2 h-4 w-4" /></Link>
             </Button>
           </div>
-        )}
+
+          <div className="rounded-2xl border border-reno-gold/25 bg-reno-charcoal/90 p-6 md:p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+            <div>
+              <h3 className="font-display text-lg font-bold text-white mb-1">{RENOVATION_NAME}</h3>
+              <p className="text-xs font-semibold uppercase tracking-wider text-reno-gold-light mb-2">{RENOVATION_TAGLINE}</p>
+              <p className="text-sm text-slate-400 leading-relaxed max-w-md">{RENOVATION_FOOTER_SUMMARY}</p>
+            </div>
+            <Button asChild className="shrink-0 rounded-full bg-reno-gold hover:bg-reno-gold-light text-reno-navy font-semibold h-11 px-6">
+              <Link href="/renovation">{RENOVATION_EXPLORE_LABEL}<ArrowRight className="ml-2 h-4 w-4" /></Link>
+            </Button>
+          </div>
+        </div>
 
         <div className="mt-12 pt-8 border-t border-brand-teal/15 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm text-slate-500">
           <p>&copy; {new Date().getFullYear()} Converra Growth Partners · PK Groups. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            {!isGrowth && (
-              <Link href="/" className="inline-flex items-center gap-2 hover:text-brand-cyan transition-colors">
-                <img src={LOGO_GROWTH_PARTNERS} alt="" className="h-5 w-auto rounded-lg opacity-90" aria-hidden />
-                Growth Partners
-              </Link>
-            )}
-            <a
-              href="https://www.linkedin.com/company/converra/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-brand-cyan transition-colors"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="https://www.instagram.com/converra_?igsh=dDI5cThha3h1c3Yw"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-brand-cyan transition-colors"
-            >
-              Instagram
-            </a>
+            <a href="https://www.linkedin.com/company/converra/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-cyan transition-colors">LinkedIn</a>
+            <a href="https://www.instagram.com/converra_?igsh=dDI5cThha3h1c3Yw" target="_blank" rel="noopener noreferrer" className="hover:text-brand-cyan transition-colors">Instagram</a>
           </div>
         </div>
       </div>

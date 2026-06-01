@@ -8,6 +8,7 @@ import { OutcomesSection } from "@/components/sections/OutcomesSection";
 import { FounderDependencySection } from "@/components/sections/FounderDependencySection";
 import { IndustriesSection } from "@/components/sections/IndustriesSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { ConverraVerticalsSection } from "@/components/sections/ConverraVerticalsSection";
 import { FinalCtaSection } from "@/components/sections/FinalCtaSection";
 import { BookCallSection } from "@/components/sections/BookCallSection";
 import { FooterSection } from "@/components/sections/FooterSection";
@@ -26,8 +27,9 @@ export default function Home() {
         <FounderDependencySection />
         <IndustriesSection />
         <TestimonialsSection />
+        <ConverraVerticalsSection />
         <FinalCtaSection />
-        <BookCallSection variant="growth" />
+        <BookCallSection />
       </main>
       <FooterSection />
     </div>

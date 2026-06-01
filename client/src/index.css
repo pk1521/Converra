@@ -443,6 +443,123 @@
   .theme-classy .hero-luxury h2 {
     @apply text-luxury-ivory;
   }
+
+  /* Converra Realty Partners — premium consulting vertical */
+  .theme-realty {
+    @apply text-slate-100 antialiased;
+  }
+
+  .realty-badge {
+    @apply inline-flex items-center rounded-full border border-realty-gold/40 bg-realty-gold/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-realty-gold-light;
+  }
+
+  .realty-hero {
+    background: linear-gradient(180deg, #0a1628 0%, #002147 45%, #0e2240 100%);
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+  }
+
+  .realty-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 90% 60% at 50% 100%, rgba(201, 169, 98, 0.12) 0%, transparent 55%),
+      linear-gradient(180deg, transparent 40%, rgba(10, 22, 40, 0.9) 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .realty-skyline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 45%;
+    opacity: 0.35;
+    background: linear-gradient(to top, rgba(201, 169, 98, 0.08), transparent);
+    mask-image: linear-gradient(to top, black 20%, transparent 100%);
+  }
+
+  .realty-glass {
+    @apply rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-xl shadow-black/20;
+  }
+
+  .realty-glass-light {
+    @apply rounded-2xl border border-realty-slate/80 bg-white shadow-[0_8px_40px_-12px_rgba(10,22,40,0.12)] hover:border-realty-gold/30 hover:shadow-[0_16px_48px_-12px_rgba(201,169,98,0.15)] transition-all duration-300;
+  }
+
+  .realty-section-light {
+    @apply bg-realty-ivory text-realty-navy;
+  }
+
+  .realty-section-dark {
+    background: linear-gradient(180deg, #0a1628 0%, #002147 100%);
+    @apply text-slate-100;
+  }
+
+  .realty-book-section {
+    @apply relative overflow-hidden text-slate-100;
+    background: linear-gradient(180deg, #002147 0%, #0a1628 100%);
+  }
+
+  .realty-footer {
+    @apply bg-realty-navy text-slate-300 border-t border-realty-gold/20;
+  }
+
+  /* Converra Renovation Solutions */
+  .theme-renovation {
+    @apply text-slate-100 antialiased;
+  }
+
+  .reno-badge {
+    @apply inline-flex items-center rounded-full border border-reno-gold/40 bg-reno-gold/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-reno-gold-light;
+  }
+
+  .reno-hero {
+    background: linear-gradient(135deg, #0a1628 0%, #1f2937 50%, #0e2240 100%);
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+  }
+
+  .reno-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 50% at 20% 80%, rgba(201, 169, 98, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse 60% 40% at 80% 20%, rgba(255, 255, 255, 0.06) 0%, transparent 45%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .reno-glass {
+    @apply rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-xl shadow-black/20;
+  }
+
+  .reno-glass-light {
+    @apply rounded-2xl border border-slate-200 bg-white shadow-[0_8px_40px_-12px_rgba(31,41,55,0.12)] hover:border-reno-gold/30 transition-all duration-300;
+  }
+
+  .reno-section-light {
+    @apply bg-reno-ivory text-reno-charcoal;
+  }
+
+  .reno-section-dark {
+    background: linear-gradient(180deg, #0a1628 0%, #1f2937 100%);
+    @apply text-slate-100;
+  }
+
+  .reno-book-section {
+    @apply relative overflow-hidden text-slate-100;
+    background: linear-gradient(180deg, #1f2937 0%, #0a1628 100%);
+  }
+
+  .reno-footer {
+    @apply bg-reno-navy text-slate-300 border-t border-reno-gold/20;
+  }
 }
 
 @layer utilities {

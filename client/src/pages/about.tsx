@@ -146,7 +146,7 @@ export default function About() {
         </div>
       </section>
 
-      <BookCallSection variant="growth" />
+      <BookCallSection />
       </main>
       <FooterSection />
     </div>

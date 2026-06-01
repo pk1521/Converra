@@ -1,3 +1,10 @@
+export const GP_NAME = "Converra Growth Partners";
+
+/** Main Converra nav / footer link label */
+export const GP_NAV_LABEL = "Growth Partners";
+
+export const GP_EXPLORE_LABEL = "Explore Growth Partners";
+
 /** Opens Calendly / checkout — not the contact form */
 export const GP_SCHEDULE_CTA = "Get a pipeline audit";
 

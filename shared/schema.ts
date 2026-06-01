@@ -6,7 +6,7 @@ export const insertLeadSchema = z.object({
   company: z.string().min(1, "This field is required"),
   phone: z.string().optional(),
   message: z.string().optional(),
-  source: z.enum(["growth-partners", "real-estate"]).optional(),
+  source: z.enum(["growth-partners", "real-estate", "realty-partners", "renovation"]).optional(),
 });
 
 export const leadSchema = insertLeadSchema.extend({
