@@ -198,7 +198,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-brand-teal/15 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm text-slate-500">
-          <p>&copy; {new Date().getFullYear()} Converra Growth Partners · PK Groups. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} PK Groups · Converra Growth Partners. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <a href="https://www.linkedin.com/company/converra/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-cyan transition-colors">LinkedIn</a>
             <a href="https://www.instagram.com/converra_?igsh=dDI5cThha3h1c3Yw" target="_blank" rel="noopener noreferrer" className="hover:text-brand-cyan transition-colors">Instagram</a>

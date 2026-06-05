@@ -341,7 +341,7 @@
   }
 
   .vertical-card-growth {
-    @apply relative overflow-hidden rounded-3xl border border-brand-blue/20 bg-white p-8 card-hover-lift;
+    @apply relative overflow-hidden rounded-3xl border border-brand-blue/20 bg-white p-6 md:p-7 card-hover-lift;
   }
 
   .vertical-card-growth::before {
@@ -350,7 +350,7 @@
   }
 
   .vertical-card-realty {
-    @apply relative overflow-hidden rounded-3xl border border-realty-gold/30 bg-realty-ivory p-8 card-hover-lift;
+    @apply relative overflow-hidden rounded-3xl border border-realty-gold/30 bg-realty-ivory p-6 md:p-7 card-hover-lift;
   }
 
   .vertical-card-realty::before {
@@ -359,7 +359,7 @@
   }
 
   .vertical-card-reno {
-    @apply relative overflow-hidden rounded-3xl border border-reno-gold/30 bg-white p-8 card-hover-lift;
+    @apply relative overflow-hidden rounded-3xl border border-reno-gold/30 bg-white p-6 md:p-7 card-hover-lift;
   }
 
   .vertical-card-reno::before {
