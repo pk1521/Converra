@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Section } from "@/components/ui/section";
+import { GP_FOOTER_KEYWORDS } from "@/lib/growth-partners";
 import {
   Target,
   Database,
@@ -58,15 +59,22 @@ export function WhatWeSolveSection() {
   return (
     <Section id="what-we-solve" variant="dark" className="!bg-charcoal">
       <div className="max-w-3xl mx-auto text-center mb-14">
-        <p className="text-brand-cyan text-sm font-medium tracking-wide mb-3 uppercase">
-          What we solve
-        </p>
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
-          Your Revenue Systems Partner
+        <span className="inline-flex items-center rounded-full border border-brand-teal/30 bg-brand-teal/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-label text-brand-cyan mb-4">
+          What we build
+        </span>
+        <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4 leading-display">
+          Your revenue systems partner
         </h2>
-        <p className="text-lg text-slate-400">
-          We don&apos;t sell activities. We build outcomes: structured systems that make growth predictable.
+        <p className="text-base md:text-lg text-slate-400 leading-copy mb-6 max-w-xl mx-auto">
+          Structured GTM, CRM, and outbound systems that make pipeline predictable.
         </p>
+        <ul className="flex flex-wrap gap-1.5 justify-center">
+          {GP_FOOTER_KEYWORDS.map((kw) => (
+            <li key={kw} className="gp-keyword-chip">
+              {kw}
+            </li>
+          ))}
+        </ul>
       </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">

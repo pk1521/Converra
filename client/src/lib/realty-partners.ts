@@ -14,12 +14,19 @@ export const REALTY_SERVICE_NAME = "Converra Realty Partners";
 export const REALTY_EXPLORE_LABEL = "Explore Realty Partners";
 
 export const REALTY_FOOTER_SUMMARY =
-  "Sales, marketing and growth consulting for builders, developers, and plot promoters in Trichy. We accelerate inventory movement through lead generation, sales systems, and long-term partnerships.";
+  "Real estate growth partner for builders, developers & plot promoters in Trichy.";
+
+export const REALTY_FOOTER_KEYWORDS = [
+  "Lead generation",
+  "Sales systems",
+  "Project launches",
+  "Inventory clearance",
+  "Digital marketing",
+] as const;
 export const REALTY_PARTNERS_TAGLINE = "Accelerating Real Estate Growth";
 export const REALTY_PARTNERS_LOCATION = "Trichy, Tamil Nadu";
 
 export const REALTY_PRIMARY_CTA = "Book a Growth Consultation";
-export const REALTY_SECONDARY_CTA = "Partner With Converra";
 
 export const REALTY_CONTACT_EMAIL = CONVERRA_EMAIL;
 export const REALTY_CONTACT_PHONE = CONVERRA_PHONE_DISPLAY;

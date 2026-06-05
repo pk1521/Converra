@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { VerticalLogo } from "@/components/VerticalLogo";
 import { GP_NAV_LABEL } from "@/lib/growth-partners";
 import {
   REALTY_CONTACT_EMAIL,
@@ -10,7 +11,6 @@ import {
 } from "@/lib/realty-partners";
 import { RENOVATION_NAV_LABEL } from "@/lib/renovation";
 import { PK_GROUPS_TAGLINE } from "@/lib/brand";
-import { RealtyBrandTitle } from "@/components/realty-partners/RealtyBrandTitle";
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 
 export function RealtyPartnersFooter() {
@@ -19,7 +19,7 @@ export function RealtyPartnersFooter() {
       <div className="container-padding py-14 md:py-16">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <RealtyBrandTitle size="footer" className="mb-1 block" />
+            <VerticalLogo vertical="realty" variant="footer" className="mb-4" />
             <p className="text-realty-gold-light text-sm font-medium mb-4">{REALTY_PARTNERS_TAGLINE}</p>
             <p className="text-xs uppercase tracking-wider text-realty-grey-light mb-6">{PK_GROUPS_TAGLINE}</p>
             <div className="space-y-3 text-sm text-slate-400">

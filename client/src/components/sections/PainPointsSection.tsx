@@ -52,11 +52,12 @@ export function PainPointsSection() {
   return (
     <Section id="pain-points" variant="light">
       <div className="max-w-3xl mx-auto text-center mb-14">
-        <h2 className="font-display text-3xl md:text-4xl lg:text-[2.5rem] font-bold text-charcoal mb-4 leading-tight">
-          Most Companies Don&apos;t Have A Lead Problem. They Have A Revenue Systems Problem.
+        <span className="brand-badge mb-4">Sound familiar?</span>
+        <h2 className="font-display text-3xl md:text-4xl lg:text-[2.5rem] font-bold text-charcoal mb-4 leading-display">
+          Not a lead problem. A systems problem.
         </h2>
-        <p className="text-lg text-muted-foreground">
-          Revenue is a system, not luck. Without infrastructure, even strong products fail to scale predictably.
+        <p className="text-lg text-muted-foreground leading-copy max-w-xl mx-auto">
+          Revenue needs infrastructure. Without it, strong products still stall at founder-dependent growth.
         </p>
       </div>
 

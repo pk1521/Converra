@@ -6,6 +6,8 @@ export const CONVERRA_BLUE = "#0066B3";
 export const CONVERRA_GREY = "#999999";
 
 export const LOGO_GROWTH_PARTNERS = "/logo-growth-partners.png";
+export const LOGO_REALTY_PARTNERS = "/logo-realty-partners.png";
+export const LOGO_RENOVATION_SOLUTIONS = "/logo-renovation-solutions.png";
 
 export const PK_GROUPS_TAGLINE = "Part of PK Groups";
 

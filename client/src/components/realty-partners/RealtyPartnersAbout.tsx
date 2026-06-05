@@ -23,11 +23,12 @@ const pillars = [
 
 export function RealtyPartnersAbout() {
   return (
-    <section id="rp-about" className="realty-section-light section-padding scroll-mt-28">
-      <div className="container-padding">
+    <section id="rp-about" className="realty-section-light section-padding scroll-mt-28 relative overflow-hidden">
+      <div className="absolute inset-0 texture-blueprint opacity-[0.15] pointer-events-none" />
+      <div className="container-padding relative z-10">
         <RealtySectionHeader
           eyebrow="About"
-          title="We Are Not Brokers. We Are Growth Partners."
+          title="We Are Not Brokers. We Are Your Realty Growth Partners."
           description="Most developers know how to acquire land and build projects. The challenge begins when it comes to branding, lead generation, customer acquisition and inventory movement. Partner with Converra as your external growth department — we help projects attract qualified buyers, improve visibility and accelerate sales through proven growth strategies."
           light
         />

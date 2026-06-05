@@ -108,20 +108,27 @@ export default {
           slate: "#E2E8F0",
         },
         reno: {
-          navy: "#0A1628",
-          "navy-mid": "#0E2240",
-          charcoal: "#1F2937",
-          gold: "#C9A962",
-          "gold-light": "#E8D5A3",
-          "gold-muted": "#A68B3D",
-          grey: "#6B7280",
-          ivory: "#F9FAFB",
+          navy: "#1C1917",
+          "navy-mid": "#292524",
+          charcoal: "#44403C",
+          gold: "#D97706",
+          "gold-light": "#FBBF24",
+          "gold-muted": "#B45309",
+          grey: "#78716C",
+          ivory: "#FAF7F2",
         },
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Space Grotesk", "Inter", "system-ui", "sans-serif"],
-        serif: ["Playfair Display", "Georgia", "serif"],
+        sans: ["Plus Jakarta Sans", "system-ui", "sans-serif"],
+        display: ["Outfit", "Plus Jakarta Sans", "system-ui", "sans-serif"],
+      },
+      letterSpacing: {
+        display: "-0.02em",
+        label: "0.12em",
+      },
+      lineHeight: {
+        display: "1.12",
+        copy: "1.7",
       },
       keyframes: {
         "accordion-down": {

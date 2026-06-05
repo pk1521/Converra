@@ -6,7 +6,6 @@ import { RealtyPartnersWhy } from "@/components/realty-partners/RealtyPartnersWh
 import { RealtyPartnersProcess } from "@/components/realty-partners/RealtyPartnersProcess";
 import { RealtyPartnersClients } from "@/components/realty-partners/RealtyPartnersClients";
 import { RealtyPartnersAdvantage } from "@/components/realty-partners/RealtyPartnersAdvantage";
-import { RealtyPartnersTestimonials } from "@/components/realty-partners/RealtyPartnersTestimonials";
 import { RealtyPartnersCta } from "@/components/realty-partners/RealtyPartnersCta";
 import { RealtyPartnersContact } from "@/components/realty-partners/RealtyPartnersContact";
 import { RealtyPartnersFooter } from "@/components/realty-partners/RealtyPartnersFooter";
@@ -36,7 +35,6 @@ export default function RealtyPartners() {
         <RealtyPartnersProcess />
         <RealtyPartnersClients />
         <RealtyPartnersAdvantage />
-        <RealtyPartnersTestimonials />
         <RealtyPartnersCta />
         <RealtyPartnersContact />
       </main>

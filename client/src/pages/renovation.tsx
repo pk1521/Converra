@@ -2,13 +2,11 @@ import { RenovationNavbar } from "@/components/renovation/RenovationNavbar";
 import { RenovationHero } from "@/components/renovation/RenovationHero";
 import { RenovationAbout } from "@/components/renovation/RenovationAbout";
 import { RenovationServices } from "@/components/renovation/RenovationServices";
-import { RenovationBeforeAfter } from "@/components/renovation/RenovationBeforeAfter";
 import { RenovationWhy } from "@/components/renovation/RenovationWhy";
 import { RenovationProcess } from "@/components/renovation/RenovationProcess";
 import { RenovationCalculator } from "@/components/renovation/RenovationCalculator";
 import { RenovationClients } from "@/components/renovation/RenovationClients";
 import { RenovationSpecial } from "@/components/renovation/RenovationSpecial";
-import { RenovationTestimonials } from "@/components/renovation/RenovationTestimonials";
 import { RenovationCta } from "@/components/renovation/RenovationCta";
 import { RenovationContact } from "@/components/renovation/RenovationContact";
 import { RenovationFooter } from "@/components/renovation/RenovationFooter";
@@ -34,13 +32,11 @@ export default function Renovation() {
         <RenovationHero />
         <RenovationAbout />
         <RenovationServices />
-        <RenovationBeforeAfter />
         <RenovationWhy />
         <RenovationProcess />
         <RenovationCalculator />
         <RenovationClients />
         <RenovationSpecial />
-        <RenovationTestimonials />
         <RenovationCta />
         <RenovationContact />
       </main>

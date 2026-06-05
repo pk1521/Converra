@@ -57,7 +57,7 @@ export function VerticalPageTabs({
   return (
     <nav
       className={cn(
-        "flex items-center gap-2 sm:gap-3 overflow-x-auto max-w-full",
+        "flex items-center gap-3 sm:gap-4 lg:gap-5 overflow-x-auto max-w-full",
         "[scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden",
         className,
       )}
@@ -76,7 +76,7 @@ export function VerticalPageTabs({
               role="tab"
               aria-selected={isActive}
               className={cn(
-                "text-[10px] sm:text-xs font-medium whitespace-nowrap transition-colors",
+                "text-xs sm:text-sm font-semibold whitespace-nowrap transition-colors duration-200",
                 isActive ? activeClass[theme] : inactiveClass[theme],
               )}
             >

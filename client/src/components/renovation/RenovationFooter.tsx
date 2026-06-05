@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { VerticalLogo } from "@/components/VerticalLogo";
 import { GP_NAV_LABEL } from "@/lib/growth-partners";
 import { REALTY_NAV_LABEL } from "@/lib/realty-partners";
 import {
@@ -10,7 +11,6 @@ import {
   RENOVATION_WHATSAPP_URL,
 } from "@/lib/renovation";
 import { PK_GROUPS_TAGLINE } from "@/lib/brand";
-import { RenovationBrandTitle } from "@/components/renovation/RenovationBrandTitle";
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 
 export function RenovationFooter() {
@@ -19,7 +19,7 @@ export function RenovationFooter() {
       <div className="container-padding py-14">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <RenovationBrandTitle size="footer" className="mb-1 block" />
+            <VerticalLogo vertical="renovation" variant="footer" className="mb-4" />
             <p className="text-reno-gold-light text-sm font-medium mb-4">{RENOVATION_TAGLINE}</p>
             <p className="text-xs uppercase tracking-wider text-slate-500 mb-6">{PK_GROUPS_TAGLINE}</p>
             <div className="space-y-3 text-sm text-slate-400">
@@ -33,7 +33,6 @@ export function RenovationFooter() {
               <h4 className="text-white text-xs uppercase tracking-wider mb-3">Explore</h4>
               <ul className="space-y-2">
                 <li><a href="#reno-services" className="hover:text-reno-gold-light">Services</a></li>
-                <li><a href="#reno-gallery" className="hover:text-reno-gold-light">Gallery</a></li>
                 <li><a href="#reno-calculator" className="hover:text-reno-gold-light">Calculator</a></li>
               </ul>
             </div>

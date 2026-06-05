@@ -21,20 +21,24 @@ export function SectionHeader({
   const isCenter = align === "center";
 
   return (
-    <motion.div
+    <motion.header
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       className={cn(
-        "max-w-3xl mb-12 md:mb-16",
+        "max-w-3xl mb-14 md:mb-20",
         isCenter && "mx-auto text-center",
         className,
       )}
     >
-      {eyebrow && <span className="brand-badge mb-4">{eyebrow}</span>}
+      {eyebrow && (
+        <div className={cn("section-eyebrow-wrap", isCenter && "section-eyebrow-wrap--center")}>
+          <span className="brand-badge">{eyebrow}</span>
+        </div>
+      )}
       <h2
         className={cn(
-          "font-display text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-tight",
+          "font-display text-3xl md:text-4xl lg:text-[2.625rem] font-bold leading-display",
           dark ? "text-white" : "text-brand-navy",
         )}
       >
@@ -43,7 +47,7 @@ export function SectionHeader({
       {description && (
         <p
           className={cn(
-            "mt-4 text-base md:text-lg leading-relaxed",
+            "mt-5 text-base md:text-lg leading-copy max-w-2xl",
             dark ? "text-slate-300" : "text-slate-600",
             isCenter && "mx-auto",
           )}
@@ -51,12 +55,12 @@ export function SectionHeader({
           {description}
         </p>
       )}
-      <motion.div
+      <div
         className={cn(
-          "mt-6 h-1 w-16 rounded-full bg-gradient-to-r from-brand-blue to-brand-teal",
+          "mt-7 h-0.5 w-14 rounded-full bg-gradient-to-r from-brand-blue to-brand-teal",
           isCenter && "mx-auto",
         )}
       />
-    </motion.div>
+    </motion.header>
   );
 }

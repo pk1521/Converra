@@ -11,6 +11,7 @@ export const RENOVATION_TAGLINE_ALT = "Renovate. Upgrade. Reimagine.";
 export const RENOVATION_LOCATION = "Trichy, Tamil Nadu";
 
 export const RENOVATION_PRIMARY_CTA = "Book Free Site Visit";
+export const RENOVATION_CALCULATOR_CTA = "Estimate your budget";
 export const RENOVATION_SECONDARY_CTA = "Get Renovation Estimate";
 export const RENOVATION_EXPLORE_LABEL = "Explore Renovation Solutions";
 
@@ -19,7 +20,16 @@ export const RENOVATION_CONTACT_PHONE = CONVERRA_PHONE_DISPLAY;
 export const RENOVATION_WHATSAPP_URL = CONVERRA_WHATSAPP_URL;
 
 export const RENOVATION_FOOTER_SUMMARY =
-  "Complete renovation partner for homes, villas, apartments, and commercial spaces. Consultation, design, project management, and execution with civil engineering expertise.";
+  "Renovation & remodeling for homes, villas, apartments & commercial spaces in Trichy.";
+
+export const RENOVATION_FOOTER_KEYWORDS = [
+  "Home renovation",
+  "Kitchen remodeling",
+  "Villa upgrades",
+  "Commercial fit-outs",
+  "Free site visit",
+  "Turnkey delivery",
+] as const;
 
 export const RENOVATION_POSITIONING = [
   "Property Transformation Specialists",
@@ -130,13 +140,6 @@ export const RENOVATION_CLIENTS = [
   "Builders",
   "Real Estate Developers",
   "Rental Property Owners",
-] as const;
-
-export const RENOVATION_GALLERY = [
-  { category: "Homes", before: "Living space before upgrade", after: "Modern open living area" },
-  { category: "Apartments", before: "Compact kitchen layout", after: "Modular kitchen refresh" },
-  { category: "Villas", before: "Exterior before facelift", after: "Updated facade and landscaping" },
-  { category: "Commercial", before: "Retail shop interior", after: "Customer-ready retail space" },
 ] as const;
 
 export const RENOVATION_TESTIMONIALS = [

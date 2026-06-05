@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
-import { Link } from "wouter";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { openBookRealtyConsultation } from "@/lib/links";
 import { REALTY_PRIMARY_CTA } from "@/lib/realty-partners";
-import { PK_GROUPS_TAGLINE } from "@/lib/brand";
 import { VerticalPageTabs } from "@/components/VerticalPageTabs";
-import { RealtyBrandTitle } from "@/components/realty-partners/RealtyBrandTitle";
+import { VerticalLogo } from "@/components/VerticalLogo";
 
 const navLinks = [
   { label: "About", href: "#rp-about" },
@@ -28,8 +26,8 @@ export function RealtyPartnersNavbar() {
   }, []);
 
   const linkClass = isScrolled
-    ? "text-slate-200/90 hover:text-realty-gold-light"
-    : "text-white/85 hover:text-realty-gold-light";
+    ? "nav-link text-slate-200/90 hover:text-realty-gold-light"
+    : "nav-link text-white/90 hover:text-realty-gold-light";
 
   const navShell = isScrolled
     ? "bg-realty-navy/95 backdrop-blur-xl shadow-lg border-b border-realty-gold/20"
@@ -38,25 +36,16 @@ export function RealtyPartnersNavbar() {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navShell}`}>
       <div className="container-padding">
-        <div className="flex items-center gap-4 lg:gap-10 min-h-[3.75rem] lg:min-h-[4.25rem]">
-          <Link href="/realty-partners" className="shrink-0 min-w-0 max-w-[10.5rem] sm:max-w-xs">
-            <RealtyBrandTitle />
-            <span className="mt-0.5 block text-[9px] sm:text-[10px] uppercase tracking-[0.18em] text-realty-gold-light/75 hidden xl:block">
-              {PK_GROUPS_TAGLINE}
-            </span>
-          </Link>
+        <div className="nav-bar-inner">
+          <VerticalLogo vertical="realty" />
 
           <div className="hidden md:flex flex-1 items-center justify-center min-w-0">
             <VerticalPageTabs theme="realty" />
           </div>
 
-          <div className="hidden xl:flex items-center gap-6 shrink-0">
+          <div className="hidden lg:flex items-center gap-7 shrink-0">
             {navLinks.map(({ label, href }) => (
-              <a
-                key={label}
-                href={href}
-                className={`text-sm font-medium whitespace-nowrap transition-colors ${linkClass}`}
-              >
+              <a key={label} href={href} className={linkClass}>
                 {label}
               </a>
             ))}
@@ -70,7 +59,7 @@ export function RealtyPartnersNavbar() {
               {REALTY_PRIMARY_CTA}
             </Button>
 
-            <div className="xl:hidden">
+            <div className="lg:hidden">
               <Sheet>
                 <SheetTrigger asChild>
                   <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
@@ -79,7 +68,7 @@ export function RealtyPartnersNavbar() {
                 </SheetTrigger>
                 <SheetContent className="bg-realty-navy border-realty-gold/20">
                   <div className="flex flex-col gap-8 mt-10">
-                    <RealtyBrandTitle size="sheet" />
+                    <VerticalLogo vertical="realty" variant="sheet" />
                     <VerticalPageTabs theme="realty" variant="menu" />
                     <div className="flex flex-col gap-4 border-t border-white/10 pt-6">
                       {navLinks.map(({ label, href }) => (

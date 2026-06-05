@@ -11,8 +11,9 @@ const pillars = [
 
 export function RenovationAbout() {
   return (
-    <section id="reno-about" className="reno-section-light section-padding scroll-mt-28">
-      <div className="container-padding">
+    <section id="reno-about" className="reno-section-light section-padding scroll-mt-28 relative overflow-hidden">
+      <div className="absolute inset-0 texture-construction opacity-30 pointer-events-none" />
+      <div className="container-padding relative z-10">
         <RenovationSectionHeader
           eyebrow="About"
           title="Renovation Is More Than Repair"

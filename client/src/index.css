@@ -37,8 +37,9 @@
   }
 
   body {
-    @apply bg-offwhite text-foreground antialiased;
-    font-family: "Inter", system-ui, sans-serif;
+    @apply bg-offwhite text-foreground antialiased text-[15px] md:text-base leading-copy;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    font-feature-settings: "kern" 1, "liga" 1;
     min-height: 100%;
   }
 
@@ -55,18 +56,128 @@
   h4,
   h5,
   h6 {
-    font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
-    @apply tracking-tight font-bold;
+    font-family: "Outfit", "Plus Jakarta Sans", system-ui, sans-serif;
+    @apply font-bold tracking-display text-balance;
+  }
+
+  p {
+    @apply leading-copy;
   }
 }
 
 @layer components {
   .container-padding {
-    @apply px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto;
+    @apply w-full max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10;
   }
 
   .section-padding {
-    @apply py-16 md:py-24 lg:py-28;
+    @apply py-20 md:py-24 lg:py-32;
+  }
+
+  .hero-section-padding {
+    @apply pt-[5rem] sm:pt-24 lg:pt-28 pb-16 md:pb-20 lg:pb-24;
+  }
+
+  .nav-bar-inner {
+    @apply flex items-center gap-5 lg:gap-8 min-h-[4.25rem] lg:min-h-[5rem];
+  }
+
+  .nav-link {
+    @apply text-[13px] font-medium tracking-wide whitespace-nowrap transition-colors duration-200;
+  }
+
+  .section-eyebrow-wrap {
+    @apply mb-5 flex;
+  }
+
+  .section-eyebrow-wrap--center {
+    @apply justify-center;
+  }
+
+  /* ── Textures & atmosphere ── */
+  .texture-grain {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+  }
+
+  .texture-saas-grid {
+    background-image:
+      linear-gradient(rgba(46, 196, 201, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(46, 196, 201, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 75%);
+  }
+
+  .texture-blueprint {
+    background-image:
+      linear-gradient(rgba(201, 169, 98, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201, 169, 98, 0.06) 1px, transparent 1px),
+      linear-gradient(rgba(201, 169, 98, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201, 169, 98, 0.03) 1px, transparent 1px);
+    background-size: 80px 80px, 80px 80px, 16px 16px, 16px 16px;
+    mask-image: linear-gradient(180deg, black 0%, black 60%, transparent 100%);
+  }
+
+  .texture-construction {
+    background-image: repeating-linear-gradient(
+      -12deg,
+      transparent,
+      transparent 12px,
+      rgba(217, 119, 6, 0.035) 12px,
+      rgba(217, 119, 6, 0.035) 13px
+    );
+  }
+
+  .editorial-kicker {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-label text-slate-400;
+  }
+
+  .editorial-kicker::before {
+    content: "";
+    @apply h-px w-8 bg-current opacity-40;
+  }
+
+  .panel-saas {
+    @apply rounded-2xl border border-brand-teal/20 bg-gradient-to-br from-white/[0.07] to-brand-navy/40 backdrop-blur-xl shadow-[0_24px_80px_-24px_rgba(0,139,156,0.35)];
+  }
+
+  .panel-realty {
+    @apply rounded-2xl border border-realty-gold/25 bg-gradient-to-br from-realty-navy/80 to-realty-navy-mid/60 backdrop-blur-xl shadow-[0_24px_80px_-24px_rgba(201,169,98,0.2)];
+  }
+
+  .panel-reno {
+    @apply rounded-2xl border border-reno-gold/30 bg-gradient-to-br from-stone-900/95 to-reno-charcoal/90 backdrop-blur-xl shadow-[0_24px_80px_-24px_rgba(217,119,6,0.22)];
+  }
+
+  .card-hover-lift {
+    @apply transition-all duration-500 ease-out hover:-translate-y-1.5 hover:shadow-2xl;
+  }
+
+  .vertical-card-growth {
+    @apply relative overflow-hidden rounded-3xl border border-brand-blue/20 bg-white p-8 card-hover-lift;
+  }
+
+  .vertical-card-growth::before {
+    content: "";
+    @apply absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-blue via-brand-teal to-brand-cyan;
+  }
+
+  .vertical-card-realty {
+    @apply relative overflow-hidden rounded-3xl border border-realty-gold/30 bg-realty-ivory p-8 card-hover-lift;
+  }
+
+  .vertical-card-realty::before {
+    content: "";
+    @apply absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-realty-gold-muted via-realty-gold to-realty-gold-light;
+  }
+
+  .vertical-card-reno {
+    @apply relative overflow-hidden rounded-3xl border border-reno-gold/30 bg-white p-8 card-hover-lift;
+  }
+
+  .vertical-card-reno::before {
+    content: "";
+    @apply absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-reno-gold-muted via-reno-gold to-reno-gold-light;
   }
 
   .btn-primary {
@@ -301,7 +412,7 @@
   }
 
   .brand-badge {
-    @apply inline-flex items-center rounded-full border border-brand-teal/35 bg-brand-teal/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-cyan;
+    @apply inline-flex items-center rounded-full border border-brand-teal/35 bg-brand-teal/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-label text-brand-cyan;
   }
 
   .brand-book-section {
@@ -450,14 +561,23 @@
   }
 
   .realty-badge {
-    @apply inline-flex items-center rounded-full border border-realty-gold/40 bg-realty-gold/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-realty-gold-light;
+    @apply inline-flex items-center rounded-full border border-realty-gold/40 bg-realty-gold/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-label text-realty-gold-light;
   }
 
   .realty-hero {
-    background: linear-gradient(180deg, #0a1628 0%, #002147 45%, #0e2240 100%);
+    background: linear-gradient(165deg, #060d18 0%, #0a1628 35%, #002147 70%, #0e2240 100%);
     position: relative;
     isolation: isolate;
     overflow: hidden;
+  }
+
+  .realty-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 85% 20%, rgba(201, 169, 98, 0.08) 0%, transparent 55%);
+    pointer-events: none;
+    z-index: 1;
   }
 
   .realty-hero::before {
@@ -483,20 +603,32 @@
   }
 
   .realty-glass {
-    @apply rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-xl shadow-black/20;
+    @apply rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl shadow-xl shadow-black/25 transition-all duration-500 hover:border-realty-gold/30 hover:bg-white/[0.06];
   }
 
   .realty-glass-light {
-    @apply rounded-2xl border border-realty-slate/80 bg-white shadow-[0_8px_40px_-12px_rgba(10,22,40,0.12)] hover:border-realty-gold/30 hover:shadow-[0_16px_48px_-12px_rgba(201,169,98,0.15)] transition-all duration-300;
+    @apply rounded-2xl border border-realty-slate/80 bg-white shadow-[0_8px_40px_-12px_rgba(10,22,40,0.12)] transition-all duration-500 hover:border-realty-gold/35 hover:shadow-[0_20px_56px_-16px_rgba(201,169,98,0.18)] hover:-translate-y-0.5;
   }
 
   .realty-section-light {
-    @apply bg-realty-ivory text-realty-navy;
+    @apply bg-realty-ivory text-realty-navy relative;
+  }
+
+  .realty-section-light::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 100% 0%, rgba(201, 169, 98, 0.07), transparent 55%);
+    pointer-events: none;
   }
 
   .realty-section-dark {
     background: linear-gradient(180deg, #0a1628 0%, #002147 100%);
-    @apply text-slate-100;
+    @apply text-slate-100 relative;
+  }
+
+  .realty-section-dark .texture-blueprint {
+    opacity: 0.5;
   }
 
   .realty-book-section {
@@ -514,14 +646,26 @@
   }
 
   .reno-badge {
-    @apply inline-flex items-center rounded-full border border-reno-gold/40 bg-reno-gold/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-reno-gold-light;
+    @apply inline-flex items-center rounded-full border border-reno-gold/40 bg-reno-gold/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-label text-reno-gold-light;
   }
 
   .reno-hero {
-    background: linear-gradient(135deg, #0a1628 0%, #1f2937 50%, #0e2240 100%);
+    background: linear-gradient(155deg, #0c0a09 0%, #1c1917 35%, #292524 65%, #44403c 100%);
     position: relative;
     isolation: isolate;
     overflow: hidden;
+  }
+
+  .reno-hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(to top, rgba(217, 119, 6, 0.08), transparent);
+    pointer-events: none;
+    z-index: 1;
   }
 
   .reno-hero::before {
@@ -529,14 +673,14 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse 70% 50% at 20% 80%, rgba(201, 169, 98, 0.15) 0%, transparent 50%),
-      radial-gradient(ellipse 60% 40% at 80% 20%, rgba(255, 255, 255, 0.06) 0%, transparent 45%);
+      radial-gradient(ellipse 70% 50% at 20% 80%, rgba(217, 119, 6, 0.12) 0%, transparent 50%),
+      radial-gradient(ellipse 60% 40% at 80% 20%, rgba(251, 191, 36, 0.06) 0%, transparent 45%);
     pointer-events: none;
     z-index: 1;
   }
 
   .reno-glass {
-    @apply rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-xl shadow-black/20;
+    @apply rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl shadow-xl shadow-black/25 transition-all duration-500 hover:border-reno-gold/30;
   }
 
   .reno-glass-light {
@@ -544,17 +688,25 @@
   }
 
   .reno-section-light {
-    @apply bg-reno-ivory text-reno-charcoal;
+    @apply bg-reno-ivory text-reno-charcoal relative;
+  }
+
+  .reno-section-light::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 40% at 0% 100%, rgba(217, 119, 6, 0.07), transparent 50%);
+    pointer-events: none;
   }
 
   .reno-section-dark {
-    background: linear-gradient(180deg, #0a1628 0%, #1f2937 100%);
+    background: linear-gradient(180deg, #1c1917 0%, #292524 100%);
     @apply text-slate-100;
   }
 
   .reno-book-section {
     @apply relative overflow-hidden text-slate-100;
-    background: linear-gradient(180deg, #1f2937 0%, #0a1628 100%);
+    background: linear-gradient(180deg, #292524 0%, #1c1917 100%);
   }
 
   .reno-footer {
@@ -573,6 +725,14 @@
 
   .text-gradient-brand {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-blue via-brand-teal to-brand-cyan;
+  }
+
+  .growth-badge {
+    @apply inline-flex items-center rounded-full border border-brand-teal/35 bg-brand-teal/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-label text-brand-cyan;
+  }
+
+  .gp-keyword-chip {
+    @apply text-[11px] font-medium px-2.5 py-1 rounded-md bg-brand-blue/10 border border-brand-teal/20 text-brand-cyan/90;
   }
 
   .gp-hero-glow {

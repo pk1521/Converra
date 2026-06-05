@@ -1,87 +1,108 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { PageTexture } from "@/components/ui/PageTexture";
 import { RevenueSystemVisual } from "@/components/visuals/RevenueSystemVisual";
 import { GrowthAmbientLayer } from "@/components/visuals/GrowthAmbientLayer";
 import { openBookStrategyCall } from "@/lib/links";
+import { GP_HERO_KEYWORDS, GP_TAGLINE } from "@/lib/growth-partners";
 import { PK_GROUPS_TAGLINE } from "@/lib/brand";
 import { scrollToSection } from "@/lib/scroll";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Clock, Globe, Zap } from "lucide-react";
+
+const trustSignals = [
+  { icon: Clock, text: "30 min strategy call" },
+  { icon: Zap, text: "24 hr response" },
+  { icon: Globe, text: "Remote-first · India-wide" },
+];
 
 export function HeroSection() {
   return (
-    <section id="hero" className="hero-revops relative min-h-screen flex items-center overflow-hidden text-white">
-      <GrowthAmbientLayer intense />
+    <section id="hero" className="hero-revops relative min-h-[92vh] lg:min-h-screen flex items-center overflow-hidden text-white">
+      <GrowthAmbientLayer />
+      <PageTexture variant="saas-grid" opacity={0.85} />
+      <PageTexture variant="grain" opacity={0.4} />
 
-      <div className="container-padding relative z-10 w-full pt-24 pb-16 lg:pt-28 lg:pb-24">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="container-padding relative z-10 w-full hero-section-padding">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-16 items-center">
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left"
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left"
           >
-            <motion.p
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-xs font-medium tracking-[0.25em] uppercase text-slate-400 mb-3"
-            >
+            <p className="editorial-kicker mb-4 justify-center lg:justify-start text-brand-cyan/80">
               {PK_GROUPS_TAGLINE}
-            </motion.p>
-
-            <motion.p
-              animate={{ opacity: [0.7, 1, 0.7] }}
-              transition={{ duration: 3, repeat: Infinity }}
-              className="inline-block text-sm font-semibold text-brand-cyan tracking-widest uppercase mb-4 px-3 py-1 rounded-full border border-brand-teal/40 bg-brand-teal/10"
-            >
-              Revenue is engineered.
-            </motion.p>
-
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.08] text-white mb-6 gp-hero-glow">
-              Helping Business With Additional Revenue &{" "}
-              <span className="text-gradient-brand">Growth</span>
-            </h1>
-
-            <p className="text-lg md:text-xl text-slate-300/95 leading-relaxed mb-10">
-              Converra Growth Partners helps startups and growth-stage companies build scalable outbound systems, CRM workflows, GTM execution frameworks, and revenue operations that drive predictable growth.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-10">
+            <span className="growth-badge mb-6">{GP_TAGLINE}</span>
+
+            <h1 className="font-display text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] font-bold leading-display text-white mb-5 gp-hero-glow">
+              Revenue systems your team can{" "}
+              <span className="text-gradient-brand">run without you</span>
+            </h1>
+
+            <p className="text-base md:text-lg text-slate-300/90 leading-relaxed mb-5 max-w-md mx-auto lg:mx-0">
+              Outbound, CRM, and GTM workflows for founder-led companies. Pipeline that scales without
+              heroics.
+            </p>
+
+            <ul className="flex flex-wrap gap-1.5 mb-8 justify-center lg:justify-start">
+              {GP_HERO_KEYWORDS.map((kw) => (
+                <li key={kw} className="gp-keyword-chip">
+                  {kw}
+                </li>
+              ))}
+            </ul>
+
+            <div className="flex flex-col sm:flex-row gap-3 mb-6 justify-center lg:justify-start">
               <Button
                 onClick={openBookStrategyCall}
-                className="h-12 px-8 text-base rounded-full bg-gradient-to-r from-brand-blue to-brand-teal hover:from-brand-teal hover:to-brand-cyan text-white font-semibold gp-btn-glow transition-all duration-300"
+                className="h-12 px-8 text-base rounded-full bg-gradient-to-r from-brand-blue to-brand-teal hover:from-brand-teal hover:to-brand-cyan text-white font-semibold gp-btn-glow"
               >
                 Book Strategy Call
               </Button>
               <Button
                 variant="outline"
                 onClick={() => scrollToSection("what-we-solve")}
-                className="h-12 px-8 text-base rounded-full btn-secondary-outline border-brand-cyan/30 hover:border-brand-cyan/60"
+                className="h-12 px-8 text-base rounded-full border-white/20 text-white hover:bg-white/10 bg-white/5"
               >
-                Explore Revenue Systems
+                See what we build
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
 
-            <p className="text-sm text-slate-400/90">
-              Predictable growth needs structured execution. Scalable companies are built on systems.
-            </p>
+            <ul className="flex flex-wrap gap-x-5 gap-y-2 justify-center lg:justify-start">
+              {trustSignals.map(({ icon: Icon, text }) => (
+                <li key={text} className="flex items-center gap-1.5 text-xs text-slate-500">
+                  <Icon className="h-3.5 w-3.5 shrink-0 text-brand-cyan/70" />
+                  {text}
+                </li>
+              ))}
+            </ul>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="relative z-10"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+            className="relative z-10 hidden sm:block"
           >
-            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-brand-blue/20 via-brand-teal/20 to-brand-cyan/20 blur-2xl animate-pulse" />
-            <motion.div
-              animate={{ y: [0, -10, 0], rotate: [0, 1, 0, -1, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="relative"
-            >
-              <RevenueSystemVisual />
-            </motion.div>
+            <div className="panel-saas p-1.5">
+              <div className="rounded-[14px] overflow-hidden border border-white/5 bg-brand-navy/60">
+                <div className="flex items-center gap-2 px-4 py-3 border-b border-white/10 bg-white/[0.03]">
+                  <span className="h-2.5 w-2.5 rounded-full bg-red-400/80" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/80" />
+                  <span className="ml-2 text-[10px] font-mono text-slate-500 uppercase tracking-wider">
+                    revenue-engine.converra
+                  </span>
+                </div>
+                <RevenueSystemVisual />
+              </div>
+            </div>
+            <p className="mt-4 text-center text-xs text-slate-500 font-medium">
+              Pipeline architecture you can actually run.
+            </p>
           </motion.div>
         </div>
       </div>

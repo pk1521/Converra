@@ -1,6 +1,6 @@
 import { CalendlyEmbed } from "@/components/calendly-embed";
 import { RealtySectionHeader } from "@/components/realty-partners/RealtySectionHeader";
-import { CALENDLY_EMBED_URL } from "@/lib/links";
+import { REALTY_CALENDLY_EMBED_URL } from "@/lib/links";
 import { REALTY_PRIMARY_CTA } from "@/lib/realty-partners";
 import { Calendar, Clock, Video } from "lucide-react";
 
@@ -37,7 +37,7 @@ export function RealtyPartnersContact() {
             </ul>
           </div>
 
-          <CalendlyEmbed url={CALENDLY_EMBED_URL} minHeight={660} />
+          <CalendlyEmbed url={REALTY_CALENDLY_EMBED_URL} minHeight={660} />
         </div>
       </div>
     </section>
