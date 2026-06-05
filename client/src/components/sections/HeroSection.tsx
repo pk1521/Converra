@@ -82,27 +82,15 @@ export function HeroSection() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-            className="relative z-10 hidden sm:block"
+            initial={{ opacity: 0, y: 24, scale: 0.97 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+            className="relative z-10 hidden sm:block lg:translate-x-2"
           >
-            <div className="panel-saas p-1.5">
-              <div className="rounded-[14px] overflow-hidden border border-white/5 bg-brand-navy/60">
-                <div className="flex items-center gap-2 px-4 py-3 border-b border-white/10 bg-white/[0.03]">
-                  <span className="h-2.5 w-2.5 rounded-full bg-red-400/80" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/80" />
-                  <span className="ml-2 text-[10px] font-mono text-slate-500 uppercase tracking-wider">
-                    revenue-engine.converra
-                  </span>
-                </div>
-                <RevenueSystemVisual />
-              </div>
+            <div className="gp-hero-panel-glow" aria-hidden />
+            <div className="gp-hero-panel relative">
+              <RevenueSystemVisual />
             </div>
-            <p className="mt-4 text-center text-xs text-slate-500 font-medium">
-              Pipeline architecture you can actually run.
-            </p>
           </motion.div>
         </div>
       </div>
